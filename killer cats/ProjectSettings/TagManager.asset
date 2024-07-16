@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - floor
+  - Water
+  - UI
+  - player
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: colisiones
+    uniqueID: 1287642473
+    locked: 0
+  - name: fondo
+    uniqueID: 1838667725
+    locked: 0
+  - name: colisiones con imajen
+    uniqueID: 3649867289
+    locked: 0
+  - name: personajes
+    uniqueID: 1003775761
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0

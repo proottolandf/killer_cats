@@ -1,0 +1,2789 @@
+fileFormatVersion: 2
+guid: 1f64dc764d267874f87b9257404fb23b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 70
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_0
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 876
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbdfef998c3d341459a06088ab237149
+      internalID: -1742927108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_1
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 875
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d6a2f4bc6e026242922b29d82c94a95
+      internalID: 895560833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_2
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 875
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0c99094fe73a2d46ab1bcc7aad63467
+      internalID: 559393815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_3
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 875
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f49a7cbb33b4dc43b2ca285934871b8
+      internalID: -2034893600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_4
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 875
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4abe531e20d15f4580b1d9887177909
+      internalID: 391088816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_5
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 875
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 801f753d46c50f8498293dc22d9d25cb
+      internalID: 1106527299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_6
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 875
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4982d3013d9a86c40b93feadfb7ea47d
+      internalID: -1664150624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_7
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 875
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 360019017f39da6409c46c810ae898bd
+      internalID: -76663296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_8
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 874
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06acbc7720b3953478791b29b4e4acb5
+      internalID: -1963887086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_9
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 875
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2dab8f0e6091b045affe55da244b5ad
+      internalID: 312957164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_10
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 875
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22f71712c7c902648bcef0774b567847
+      internalID: 981730698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_11
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 793
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6457b09e620ba446a0d275ba8ef3b9f
+      internalID: -541761399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_12
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 793
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a8cb1f330b71b747abb2d27b16061a3
+      internalID: 1158838139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_13
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 793
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85321ffba9d4bdd489a0fc1d440c0bc4
+      internalID: 683763774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_14
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 793
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c14eed7fa9854774fa116454990e8258
+      internalID: 349682052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_15
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 793
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc363a9d4476b9c48bc848386685700c
+      internalID: 675582171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_16
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 793
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69d885aad1e2a634c9afbbbd55ad03e4
+      internalID: -873099350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_17
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 793
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f389c9e749ca20344a612d620be032a7
+      internalID: -63072669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_18
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 793
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a577f2f9238d504fbf7877387e54655
+      internalID: -674634257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_19
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 793
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40e75cdb4ff437543b64f8983b0e8b03
+      internalID: -1631219484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_20
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 793
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56f7823f4904ede48953511137a4246f
+      internalID: -1097028506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_21
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 793
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f1afdc432c72044eb23f8106ecdbf8d
+      internalID: -1378314413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_22
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 711
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a8454d95b6a7b84594250f3e4de56d3
+      internalID: -1962021934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_23
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 711
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57af5a2e693918445925df5be51a9f4f
+      internalID: -875600760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_24
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 711
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d1896a69cfb97c4388a78e19e987e59
+      internalID: 1521173579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_25
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 711
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebdab611ad84e8842b001fdbfa8ee259
+      internalID: 66445385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_26
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 711
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03a6f65667b7d1242901e6f60c5db6e6
+      internalID: 536001772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_27
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 710
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 512740720cb0fa64e9e5ffb53167a66f
+      internalID: 644734644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_28
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 710
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04d58a1d79f792642a1c00e696aac01d
+      internalID: 77783772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_29
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 711
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc1d728e93034843b9a043b8f71a9e8
+      internalID: 1975704783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_30
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 711
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 922d0e6abcd91ae47af0c0eb3b7e81b2
+      internalID: -1119277090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_31
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 711
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a635132b02b82244bd932d5dd63ebd0
+      internalID: -13129942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_32
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 711
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5529dc22a21d37442a53231b3619db79
+      internalID: -1844521446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_33
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 629
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7de8a1f1bbeb80d48ad82e680df000bd
+      internalID: 291355400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_34
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 629
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9abd5377bc9398e48baa4d78b6a724da
+      internalID: -1881938547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_35
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 629
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a836be74e459204c80bc17848435054
+      internalID: -1470442298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_36
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 629
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73db55eccd4fbb14285ed680baac434b
+      internalID: -242695746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_37
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 629
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dc679e7ef4718449bb95e2e43449b3f
+      internalID: -1009953683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_38
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 628
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19f73b055f904574c81b4fefda5f2a1a
+      internalID: -1880011751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_39
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 628
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d76e131cb87bef43a7b167d3bd4ec44
+      internalID: -22510678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_40
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 629
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc5537b4eb631a64e8d726baca142939
+      internalID: 376888264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_41
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 629
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0a166b72a46cfb4d842adc8ece7b4a2
+      internalID: -453908422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_42
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 629
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df7f8027124dff8419df4505103ea258
+      internalID: 932003700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_43
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 629
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8f26195ad1dfd142a9458ead71a4088
+      internalID: -1058629748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_44
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 547
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47d351aade8360742ad7b7f6b5d05951
+      internalID: 370061232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_45
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 547
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c5a871c9c961a34fbc1bcdd31b3180a
+      internalID: -1842630713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_46
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 547
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7630e461e86c5c84bb7a4df67f7bbdb7
+      internalID: 2002120949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_47
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 547
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db73ca04afe11904bba220a37dd6e808
+      internalID: 594027099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_48
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 547
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9306943e67c2054bb36075c902e2c47
+      internalID: -1391973927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_49
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 546
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b400b259aa8ca8d478b1a8c70901abcd
+      internalID: 2013558270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_50
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 547
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a8e2785b3b19ad429c1e18baf5436fa
+      internalID: -1146845850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_51
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 547
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97b13e2628166a346b0c644306c85195
+      internalID: 1807003785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_52
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 547
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffb792cf807ba244d957aa76eba0fd30
+      internalID: 1118381060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_53
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 547
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 237b2550d9c32c841a1187f839c4a7d3
+      internalID: -433983215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_54
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 547
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72a604ca6a3b6f74c97b69f4551c3125
+      internalID: -252968908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_55
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 465
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 305116b3293acd247b7190b8c11af128
+      internalID: 96209874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_56
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 465
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47d57fe193fd3fd4c8807c8cc520c1b1
+      internalID: -1141640851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_57
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 465
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d266c0b7266200498bc03294eee38c4
+      internalID: -1624399406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_58
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 465
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83ecee7d4618df745b52a9f155c02fd3
+      internalID: 707420464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_59
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 465
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c3395ad620ba9c4b84b79036db5bb99
+      internalID: 235165798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_60
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 465
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4c440d714e2b974e94e113e0eda8e39
+      internalID: -773512044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_61
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 465
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb6c8184c31abdc4fa28fb4d5b8739c3
+      internalID: 846783084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_62
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 465
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 481fa96ff2da69d4fb911db2930e6844
+      internalID: 1883108441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_63
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 465
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eac1f435006285847a5d3d16a1d56f96
+      internalID: 514283455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_64
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 465
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 565afddeae3019c46a6b454d3537061a
+      internalID: 1455265286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_65
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 465
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e8fd509fd9fb544e9aa16c47dc90d55
+      internalID: 1278560249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_66
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 383
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a4d3528f0736242ae04984ee3d4662
+      internalID: -294642963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_67
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 383
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c3799f9d0b177445adc781efddf912e
+      internalID: -1896809986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_68
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 383
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d6958836cb82f5499f21aef2815d3ca
+      internalID: 1012332562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_69
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 383
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a5ad42c96f8a5546b288a4d8d3f0203
+      internalID: -938904111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_70
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 383
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6ade7ace4730774e98f4b9bbca9fa63
+      internalID: -768277792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_71
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 381
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 239a4d9a05daf0746b68c3af45aca3b1
+      internalID: -1367212288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_72
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 383
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5954491819e754243bacf6d2a2a36f8e
+      internalID: 1532239677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_73
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 383
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4f7b4d87a876be40be92170f6909372
+      internalID: 790951777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_74
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 383
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b3a95449a410247bee32f9a326d9e7
+      internalID: 1639781018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_75
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 383
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1548e8e7655ab1489e7de937024cb40
+      internalID: -13238841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_76
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 383
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6fe0da852bb4b44982f2d2e7de9f223
+      internalID: 1943668049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_77
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 301
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c94e6a7c430464428e7c526d4a61422
+      internalID: -1537217512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_78
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 301
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d731472f25526c45ac60ea26a8875a5
+      internalID: -1622679580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_79
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 301
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89269ab76fc9c7b49adc79a4250a357d
+      internalID: 1030390529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_80
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 301
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88785a8c9e3373d439999ae457d7acfe
+      internalID: 1421330931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_81
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 299
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3a33b3ea03863f428106f9b958fae62
+      internalID: 791725323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_82
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 298
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cb2bf5f4d2e9b24ea52e563a5012a06
+      internalID: -435241992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_83
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 301
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 689836e3c12227142acc005687c5d29d
+      internalID: -1556847856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_84
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 301
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb6836c18776d834b868daf591590107
+      internalID: 1594101741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_85
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 301
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12691e838f7596f42a813d01aeaba176
+      internalID: 221102653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_86
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 301
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a901b806dcf4d9e488a7263d93ad0b56
+      internalID: 980402534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_87
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 301
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c17a7f0f92a514240a6e1bfe138ba07f
+      internalID: 1858219676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_88
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 219
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b569ed399eb01241b5905c290f3121e
+      internalID: -1257730687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_89
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 219
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a729c2939310719488001f255f75e108
+      internalID: -815983698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_90
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 219
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de656ea405b08bb469c32b0724814cd6
+      internalID: 550899509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_91
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 219
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97c817fc3118a4a4ea112d39dcc09aa0
+      internalID: -576014179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_92
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 219
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b294bcbff943627409a06ecea6801931
+      internalID: 1587401226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_93
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 217
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1100821be50e6f4ea30441270d84137
+      internalID: 1345924741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_94
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 219
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e2b8fc5ad6de9d4bad730b58210be68
+      internalID: -1259589048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_95
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 219
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0cf932dcc5920c4095c8b7e87bf8289
+      internalID: 1596929622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_96
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 219
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a21c9b0f7bf3a374fa717c5e1181b13e
+      internalID: 1021732279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_97
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 219
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f7b746979b30584da8b19b1d5339bdc
+      internalID: -2119247761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_98
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 219
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cb4f8bb2af70d740a4c83e393bd2370
+      internalID: 1621865474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_99
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 137
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d7489d4c00e063418d313e16e74b00e
+      internalID: 1381022021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_100
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 137
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19e9d27c91c11ba48acf561a0dbd5324
+      internalID: -346923908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_101
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 137
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5acf218d0ceb2b0418854bff707534c1
+      internalID: 1699512763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_102
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 137
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5875fb6cee2235e46953ee95908b8257
+      internalID: -784456968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_103
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 137
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a9a62c117d8e74e900d02fc08673a3
+      internalID: -1823093005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_104
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 135
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbb68b42e6eae764dba626e84c17e908
+      internalID: 1218568826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_105
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 137
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 135ff6ca73c5e024685999ceb81010b3
+      internalID: -1933751681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_106
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 137
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26e0c28adf1fd4b4383b209643ca84ab
+      internalID: -879409844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_107
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 137
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09993aece7453c04aa734605ea2fcf24
+      internalID: 181580898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_108
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 137
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2466ed27a4c66bf4fa25c2ae1de6424d
+      internalID: -1945546718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_109
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 137
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21156bb487ff55d45a9d28f97cdd4ab5
+      internalID: 1076086980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_110
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 55
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff45d86be3d410b4d84af0765547a47a
+      internalID: 961308353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_111
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 55
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24a1b5331c0c4d2499645fa0cda2a1c3
+      internalID: 445580242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_112
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 55
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d8bede6091039445b8d6e06b302cd7d
+      internalID: 1997457184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_113
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 55
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66420f32a2820a145834b75b16eacabc
+      internalID: -1143988452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_114
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 55
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caea77ccbcd06804f9c523c67c460b3d
+      internalID: 2065333443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_115
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 55
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c39dd392d6da8743915790ff54570d3
+      internalID: 1964889739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_116
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 55
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad956d2420f448e47920298b6336447a
+      internalID: -2016412883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_117
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 55
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3b3776e9a2f3b24c959a520c4bbd9ec
+      internalID: 898382485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_118
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 55
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee5d288eb750270408a901e826967542
+      internalID: -1436650729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_119
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 55
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7baaf48a3f8b07f4cb52b6c546373d3d
+      internalID: 240735856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixel-art-style-set-of-different-texture-vector-23823354_120
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 55
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fafbc2a02a425884091ba1976ae1d91f
+      internalID: -300482529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      pixel-art-style-set-of-different-texture-vector-23823354_0: -1742927108
+      pixel-art-style-set-of-different-texture-vector-23823354_1: 895560833
+      pixel-art-style-set-of-different-texture-vector-23823354_10: 981730698
+      pixel-art-style-set-of-different-texture-vector-23823354_100: -346923908
+      pixel-art-style-set-of-different-texture-vector-23823354_101: 1699512763
+      pixel-art-style-set-of-different-texture-vector-23823354_102: -784456968
+      pixel-art-style-set-of-different-texture-vector-23823354_103: -1823093005
+      pixel-art-style-set-of-different-texture-vector-23823354_104: 1218568826
+      pixel-art-style-set-of-different-texture-vector-23823354_105: -1933751681
+      pixel-art-style-set-of-different-texture-vector-23823354_106: -879409844
+      pixel-art-style-set-of-different-texture-vector-23823354_107: 181580898
+      pixel-art-style-set-of-different-texture-vector-23823354_108: -1945546718
+      pixel-art-style-set-of-different-texture-vector-23823354_109: 1076086980
+      pixel-art-style-set-of-different-texture-vector-23823354_11: -541761399
+      pixel-art-style-set-of-different-texture-vector-23823354_110: 961308353
+      pixel-art-style-set-of-different-texture-vector-23823354_111: 445580242
+      pixel-art-style-set-of-different-texture-vector-23823354_112: 1997457184
+      pixel-art-style-set-of-different-texture-vector-23823354_113: -1143988452
+      pixel-art-style-set-of-different-texture-vector-23823354_114: 2065333443
+      pixel-art-style-set-of-different-texture-vector-23823354_115: 1964889739
+      pixel-art-style-set-of-different-texture-vector-23823354_116: -2016412883
+      pixel-art-style-set-of-different-texture-vector-23823354_117: 898382485
+      pixel-art-style-set-of-different-texture-vector-23823354_118: -1436650729
+      pixel-art-style-set-of-different-texture-vector-23823354_119: 240735856
+      pixel-art-style-set-of-different-texture-vector-23823354_12: 1158838139
+      pixel-art-style-set-of-different-texture-vector-23823354_120: -300482529
+      pixel-art-style-set-of-different-texture-vector-23823354_13: 683763774
+      pixel-art-style-set-of-different-texture-vector-23823354_14: 349682052
+      pixel-art-style-set-of-different-texture-vector-23823354_15: 675582171
+      pixel-art-style-set-of-different-texture-vector-23823354_16: -873099350
+      pixel-art-style-set-of-different-texture-vector-23823354_17: -63072669
+      pixel-art-style-set-of-different-texture-vector-23823354_18: -674634257
+      pixel-art-style-set-of-different-texture-vector-23823354_19: -1631219484
+      pixel-art-style-set-of-different-texture-vector-23823354_2: 559393815
+      pixel-art-style-set-of-different-texture-vector-23823354_20: -1097028506
+      pixel-art-style-set-of-different-texture-vector-23823354_21: -1378314413
+      pixel-art-style-set-of-different-texture-vector-23823354_22: -1962021934
+      pixel-art-style-set-of-different-texture-vector-23823354_23: -875600760
+      pixel-art-style-set-of-different-texture-vector-23823354_24: 1521173579
+      pixel-art-style-set-of-different-texture-vector-23823354_25: 66445385
+      pixel-art-style-set-of-different-texture-vector-23823354_26: 536001772
+      pixel-art-style-set-of-different-texture-vector-23823354_27: 644734644
+      pixel-art-style-set-of-different-texture-vector-23823354_28: 77783772
+      pixel-art-style-set-of-different-texture-vector-23823354_29: 1975704783
+      pixel-art-style-set-of-different-texture-vector-23823354_3: -2034893600
+      pixel-art-style-set-of-different-texture-vector-23823354_30: -1119277090
+      pixel-art-style-set-of-different-texture-vector-23823354_31: -13129942
+      pixel-art-style-set-of-different-texture-vector-23823354_32: -1844521446
+      pixel-art-style-set-of-different-texture-vector-23823354_33: 291355400
+      pixel-art-style-set-of-different-texture-vector-23823354_34: -1881938547
+      pixel-art-style-set-of-different-texture-vector-23823354_35: -1470442298
+      pixel-art-style-set-of-different-texture-vector-23823354_36: -242695746
+      pixel-art-style-set-of-different-texture-vector-23823354_37: -1009953683
+      pixel-art-style-set-of-different-texture-vector-23823354_38: -1880011751
+      pixel-art-style-set-of-different-texture-vector-23823354_39: -22510678
+      pixel-art-style-set-of-different-texture-vector-23823354_4: 391088816
+      pixel-art-style-set-of-different-texture-vector-23823354_40: 376888264
+      pixel-art-style-set-of-different-texture-vector-23823354_41: -453908422
+      pixel-art-style-set-of-different-texture-vector-23823354_42: 932003700
+      pixel-art-style-set-of-different-texture-vector-23823354_43: -1058629748
+      pixel-art-style-set-of-different-texture-vector-23823354_44: 370061232
+      pixel-art-style-set-of-different-texture-vector-23823354_45: -1842630713
+      pixel-art-style-set-of-different-texture-vector-23823354_46: 2002120949
+      pixel-art-style-set-of-different-texture-vector-23823354_47: 594027099
+      pixel-art-style-set-of-different-texture-vector-23823354_48: -1391973927
+      pixel-art-style-set-of-different-texture-vector-23823354_49: 2013558270
+      pixel-art-style-set-of-different-texture-vector-23823354_5: 1106527299
+      pixel-art-style-set-of-different-texture-vector-23823354_50: -1146845850
+      pixel-art-style-set-of-different-texture-vector-23823354_51: 1807003785
+      pixel-art-style-set-of-different-texture-vector-23823354_52: 1118381060
+      pixel-art-style-set-of-different-texture-vector-23823354_53: -433983215
+      pixel-art-style-set-of-different-texture-vector-23823354_54: -252968908
+      pixel-art-style-set-of-different-texture-vector-23823354_55: 96209874
+      pixel-art-style-set-of-different-texture-vector-23823354_56: -1141640851
+      pixel-art-style-set-of-different-texture-vector-23823354_57: -1624399406
+      pixel-art-style-set-of-different-texture-vector-23823354_58: 707420464
+      pixel-art-style-set-of-different-texture-vector-23823354_59: 235165798
+      pixel-art-style-set-of-different-texture-vector-23823354_6: -1664150624
+      pixel-art-style-set-of-different-texture-vector-23823354_60: -773512044
+      pixel-art-style-set-of-different-texture-vector-23823354_61: 846783084
+      pixel-art-style-set-of-different-texture-vector-23823354_62: 1883108441
+      pixel-art-style-set-of-different-texture-vector-23823354_63: 514283455
+      pixel-art-style-set-of-different-texture-vector-23823354_64: 1455265286
+      pixel-art-style-set-of-different-texture-vector-23823354_65: 1278560249
+      pixel-art-style-set-of-different-texture-vector-23823354_66: -294642963
+      pixel-art-style-set-of-different-texture-vector-23823354_67: -1896809986
+      pixel-art-style-set-of-different-texture-vector-23823354_68: 1012332562
+      pixel-art-style-set-of-different-texture-vector-23823354_69: -938904111
+      pixel-art-style-set-of-different-texture-vector-23823354_7: -76663296
+      pixel-art-style-set-of-different-texture-vector-23823354_70: -768277792
+      pixel-art-style-set-of-different-texture-vector-23823354_71: -1367212288
+      pixel-art-style-set-of-different-texture-vector-23823354_72: 1532239677
+      pixel-art-style-set-of-different-texture-vector-23823354_73: 790951777
+      pixel-art-style-set-of-different-texture-vector-23823354_74: 1639781018
+      pixel-art-style-set-of-different-texture-vector-23823354_75: -13238841
+      pixel-art-style-set-of-different-texture-vector-23823354_76: 1943668049
+      pixel-art-style-set-of-different-texture-vector-23823354_77: -1537217512
+      pixel-art-style-set-of-different-texture-vector-23823354_78: -1622679580
+      pixel-art-style-set-of-different-texture-vector-23823354_79: 1030390529
+      pixel-art-style-set-of-different-texture-vector-23823354_8: -1963887086
+      pixel-art-style-set-of-different-texture-vector-23823354_80: 1421330931
+      pixel-art-style-set-of-different-texture-vector-23823354_81: 791725323
+      pixel-art-style-set-of-different-texture-vector-23823354_82: -435241992
+      pixel-art-style-set-of-different-texture-vector-23823354_83: -1556847856
+      pixel-art-style-set-of-different-texture-vector-23823354_84: 1594101741
+      pixel-art-style-set-of-different-texture-vector-23823354_85: 221102653
+      pixel-art-style-set-of-different-texture-vector-23823354_86: 980402534
+      pixel-art-style-set-of-different-texture-vector-23823354_87: 1858219676
+      pixel-art-style-set-of-different-texture-vector-23823354_88: -1257730687
+      pixel-art-style-set-of-different-texture-vector-23823354_89: -815983698
+      pixel-art-style-set-of-different-texture-vector-23823354_9: 312957164
+      pixel-art-style-set-of-different-texture-vector-23823354_90: 550899509
+      pixel-art-style-set-of-different-texture-vector-23823354_91: -576014179
+      pixel-art-style-set-of-different-texture-vector-23823354_92: 1587401226
+      pixel-art-style-set-of-different-texture-vector-23823354_93: 1345924741
+      pixel-art-style-set-of-different-texture-vector-23823354_94: -1259589048
+      pixel-art-style-set-of-different-texture-vector-23823354_95: 1596929622
+      pixel-art-style-set-of-different-texture-vector-23823354_96: 1021732279
+      pixel-art-style-set-of-different-texture-vector-23823354_97: -2119247761
+      pixel-art-style-set-of-different-texture-vector-23823354_98: 1621865474
+      pixel-art-style-set-of-different-texture-vector-23823354_99: 1381022021
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
