@@ -43,7 +43,7 @@ private Animator animator;
             saltosRestantes = saltosMaximos;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && saltosRestantes > 0)
+        if (Input.GetKeyDown("up") && saltosRestantes > 0)
         {
             saltosRestantes--;
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0f);
