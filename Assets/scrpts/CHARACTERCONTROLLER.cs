@@ -8,8 +8,9 @@ public class CHARACTERCONTROLLER : MonoBehaviour
     public float fuerzaSalto;
     public float saltosMaximos;
     public LayerMask capaSuelo;
-private Animator animator;
-
+    private Animator animator;
+    public AudioClip sonidoSalto;
+    
     private Rigidbody2D rigidBody;
     private BoxCollider2D boxCollider;
     private bool mirandoDerecha = true;
@@ -54,6 +55,7 @@ private Animator animator;
             saltosRestantes--;
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0f);
             rigidBody.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
+            AudioManager.Instance.ReproducirSonido(sonidoSalto);
         }
     }
 
