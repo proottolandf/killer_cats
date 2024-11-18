@@ -8,14 +8,13 @@ public class CHARACTERCONTROLLER : MonoBehaviour
     public float fuerzaSalto;
     public float saltosMaximos;
     public LayerMask capaSuelo;
-    private Animator animator;
     public AudioClip sonidoSalto;
     
+    private Animator animator;
     private Rigidbody2D rigidBody;
     private BoxCollider2D boxCollider;
     private bool mirandoDerecha = true;
     private float saltosRestantes;
-
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -41,6 +40,8 @@ public class CHARACTERCONTROLLER : MonoBehaviour
             0.2f,
              capaSuelo);
         return raycastHit.collider != null;
+       
+        animator.SetBool("isJumping", false);
     }
 
     void ProcesarSalto()
@@ -57,6 +58,7 @@ public class CHARACTERCONTROLLER : MonoBehaviour
             rigidBody.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
             AudioManager.Instance.ReproducirSonido(sonidoSalto);
         }
+       
     }
 
     void ProcesarMovimiento()
