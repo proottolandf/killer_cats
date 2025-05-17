@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CustomCharacterController : MonoBehaviour
 {
+    [Header("Vida")]
+    public float vidaMaxima = 100f;
+    private float vidaActual;
+    public Image barraVida;
+ 
     [Header("Movimiento")]
     public float velocidad = 5f;
     public float fuerzaSalto = 10f;
@@ -29,6 +35,8 @@ public class CustomCharacterController : MonoBehaviour
 
     private void Start()
     {
+         vidaActual = vidaMaxima;
+        ActualizarBarraVida();
         rigidBody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
@@ -124,4 +132,33 @@ public class CustomCharacterController : MonoBehaviour
         animator.SetFloat("x", x);
         animator.SetFloat("y", y);
     }
+// Método para recibir daño
+    public void RecibirDanio(float cantidad)
+    {
+        vidaActual -= cantidad;
+        vidaActual = Mathf.Clamp(vidaActual, 0, vidaMaxima);
+
+        ActualizarBarraVida();
+
+        if (vidaActual <= 0)
+        {
+            Morir();
+        }
+    }
+
+    void Morir()
+    {
+        Debug.Log("El personaje ha muerto.");
+        // Aquí puedes desactivar al personaje, reproducir animación de muerte, etc.
+        gameObject.SetActive(false);
+    }
+
+    void ActualizarBarraVida()
+    {
+        if (barraVida != null)
+        {
+            barraVida.fillAmount = vidaActual / vidaMaxima;
+        }
+    }
+
 }
