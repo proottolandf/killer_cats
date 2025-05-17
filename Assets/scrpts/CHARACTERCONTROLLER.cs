@@ -2,64 +2,75 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CHARACTERCONTROLLER : MonoBehaviour
+public class CustomCharacterController : MonoBehaviour
 {
-    public float velocidad;
-    public float fuerzaSalto;
-    public float saltosMaximos;
+    [Header("Movimiento")]
+    public float velocidad = 5f;
+    public float fuerzaSalto = 10f;
+    public int saltosMaximos = 2;
+    [SerializeField] private float distanciaDeteccionSuelo = 0.2f;
     public LayerMask capaSuelo;
+
+    [Header("Audio")]
     public AudioClip sonidoSalto;
-    
-    //cosas tecnicas
+
+    // Componentes
     private Animator animator;
     private Rigidbody2D rigidBody;
     private BoxCollider2D boxCollider;
-    private float saltosRestantes;
-    
-    //animacion
+    private int saltosRestantes;
+
+    // Animación y orientación
     private bool mirandoDerecha = true;
     private Vector2 ultimaPosicion;
     private Vector2 direccionMovimiento;
     private float x;
     private float y;
-    
-    
+
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
-        saltosRestantes = saltosMaximos;
         animator = GetComponent<Animator>();
+
+        saltosRestantes = saltosMaximos;
         ultimaPosicion = transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        ProcesarMovimiento();
-        ProcesarSalto();
+        bool enSuelo = EstaEnSuelo();
+
+        ProcesarEntradaSalto(enSuelo);
         ActualizarDireccionMovimiento();
         ActualizarAnimacion();
     }
 
+    private void FixedUpdate()
+    {
+        ProcesarMovimiento();
+    }
+
     bool EstaEnSuelo()
     {
-        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center,
-         new Vector2(boxCollider.bounds.size.x,
-         boxCollider.bounds.size.y),
-          0f,
-           Vector2.down,
-            0.2f,
-             capaSuelo);
+        RaycastHit2D raycastHit = Physics2D.BoxCast(
+            boxCollider.bounds.center,
+            boxCollider.bounds.size,
+            0f,
+            Vector2.down,
+            distanciaDeteccionSuelo,
+            capaSuelo);
+
         return raycastHit.collider != null;
     }
 
-    void ProcesarSalto()
+    void ProcesarEntradaSalto(bool enSuelo)
     {
-        if(EstaEnSuelo())
+        if (enSuelo)
         {
             saltosRestantes = saltosMaximos;
         }
+
         if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)) && saltosRestantes > 0)
         {
             saltosRestantes--;
@@ -71,7 +82,6 @@ public class CHARACTERCONTROLLER : MonoBehaviour
 
     void ProcesarMovimiento()
     {
-        // Lógica de movimiento
         float inputMovimiento = Input.GetAxis("Horizontal");
         rigidBody.velocity = new Vector2(inputMovimiento * velocidad, rigidBody.velocity.y);
 
@@ -80,25 +90,23 @@ public class CHARACTERCONTROLLER : MonoBehaviour
 
     void GestionarOrientacion(float inputMovimiento)
     {
-        // Si se cumple condición
-        if( (mirandoDerecha == true && inputMovimiento < 0) || (mirandoDerecha == false && inputMovimiento > 0) )
+        if ((mirandoDerecha && inputMovimiento < 0) || (!mirandoDerecha && inputMovimiento > 0))
         {
-            // Ejecutar código de volteado
             mirandoDerecha = !mirandoDerecha;
             transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         }
     }
- void ActualizarDireccionMovimiento()
+
+    void ActualizarDireccionMovimiento()
     {
         Vector2 posicionActual = transform.position;
-        direccionMovimiento = posicionActual - ultimaPosicion;
+        Vector2 direccion = posicionActual - ultimaPosicion;
+        float magnitud = direccion.magnitude;
 
-        Vector2 direccionNormalizada = direccionMovimiento.normalized;
-
-        // Suavizado para evitar micro-movimientos molestos
         float minMovimiento = 0.1f;
-        if (direccionMovimiento.magnitude > minMovimiento)
+        if (magnitud > minMovimiento)
         {
+            Vector2 direccionNormalizada = direccion / magnitud;
             x = direccionNormalizada.x;
             y = direccionNormalizada.y;
         }
