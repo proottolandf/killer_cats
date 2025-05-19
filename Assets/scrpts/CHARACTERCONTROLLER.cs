@@ -8,8 +8,16 @@ public class CustomCharacterController : MonoBehaviour
     [Header("Vida")]
     public float vidaMaxima = 100f;
     private float vidaActual;
+    public bool Alive { get; private set; } = true; 
     public Image barraVida;
- 
+    
+    [Header("Invulnerabilidad")]
+public float tiempoInvulnerable = 1f;
+public float frecuenciaParpadeo = 0.1f;
+
+private bool esInvulnerable = false;
+private SpriteRenderer spriteRenderer;
+
     [Header("Movimiento")]
     public float velocidad = 5f;
     public float fuerzaSalto = 10f;
@@ -17,8 +25,12 @@ public class CustomCharacterController : MonoBehaviour
     [SerializeField] private float distanciaDeteccionSuelo = 0.2f;
     public LayerMask capaSuelo;
 
+    [Header("Salto Avanzado")]
+    [SerializeField] private float multiplicadorCorteSalto = 0.5f;
+
     [Header("Audio")]
     public AudioClip sonidoSalto;
+    public AudioClip Daño;
 
     // Componentes
     private Animator animator;
@@ -35,8 +47,10 @@ public class CustomCharacterController : MonoBehaviour
 
     private void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
          vidaActual = vidaMaxima;
         ActualizarBarraVida();
+
         rigidBody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
@@ -48,14 +62,19 @@ public class CustomCharacterController : MonoBehaviour
     private void Update()
     {
         bool enSuelo = EstaEnSuelo();
-
+        //cortar salto
+        if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.UpArrow)) && rigidBody.velocity.y > 0)
+        {
+            rigidBody.velocity = new Vector2(rigidBody.velocity.x, rigidBody.velocity.y * multiplicadorCorteSalto);
+        }
         ProcesarEntradaSalto(enSuelo);
-        ActualizarDireccionMovimiento();
+       
         ActualizarAnimacion();
     }
 
     private void FixedUpdate()
     {
+         ActualizarDireccionMovimiento();
         ProcesarMovimiento();
     }
 
@@ -111,7 +130,7 @@ public class CustomCharacterController : MonoBehaviour
         Vector2 direccion = posicionActual - ultimaPosicion;
         float magnitud = direccion.magnitude;
 
-        float minMovimiento = 0.1f;
+        float minMovimiento = 0.001f;
         if (magnitud > minMovimiento)
         {
             Vector2 direccionNormalizada = direccion / magnitud;
@@ -132,26 +151,64 @@ public class CustomCharacterController : MonoBehaviour
         animator.SetFloat("x", x);
         animator.SetFloat("y", y);
     }
-// Método para recibir daño
-    public void RecibirDanio(float cantidad)
+
+    public void ActivarInvulnerabilidad()
+{
+    if (!esInvulnerable)
     {
-        vidaActual -= cantidad;
-        vidaActual = Mathf.Clamp(vidaActual, 0, vidaMaxima);
+        StartCoroutine(InvulnerabilidadTemporal());
+    }
+}
 
-        ActualizarBarraVida();
+private IEnumerator InvulnerabilidadTemporal()
+{
+    esInvulnerable = true;
 
-        if (vidaActual <= 0)
-        {
-            Morir();
-        }
+    float tiempo = 0f;
+    while (tiempo < tiempoInvulnerable)
+    {
+        spriteRenderer.enabled = false;
+        yield return new WaitForSeconds(frecuenciaParpadeo);
+        spriteRenderer.enabled = true;
+        yield return new WaitForSeconds(frecuenciaParpadeo);
+        tiempo += frecuenciaParpadeo * 2;
     }
 
+    esInvulnerable = false;
+}
+    public void RecibirDanio(float cantidad)
+{
+    if (esInvulnerable) return;
+
+    vidaActual -= cantidad;
+    vidaActual = Mathf.Clamp(vidaActual, 0, vidaMaxima);
+    Alive = vidaActual > 0;
+    ActualizarBarraVida();
+
+    animator.SetTrigger("Daño");
+     AudioManager.Instance.ReproducirSonido(Daño);
+
+    // Activar i-frames
+    ActivarInvulnerabilidad();
+
+    if (vidaActual <= 0)
+    {
+        Morir();
+    }
+}
     void Morir()
     {
         Debug.Log("El personaje ha muerto.");
-        // Aquí puedes desactivar al personaje, reproducir animación de muerte, etc.
-        gameObject.SetActive(false);
+         Alive = false;
+        
+        animator.SetTrigger("Muerte");
+        StartCoroutine(EsperarYDesactivar());
     }
+    private IEnumerator EsperarYDesactivar()
+{
+    yield return new WaitForSeconds(2f); 
+    gameObject.SetActive(false); 
+}
 
     void ActualizarBarraVida()
     {
@@ -161,4 +218,4 @@ public class CustomCharacterController : MonoBehaviour
         }
     }
 
-}
+} 
