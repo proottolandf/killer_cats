@@ -11,12 +11,22 @@ public class CustomCharacterController : MonoBehaviour
     public bool Alive { get; private set; } = true; 
     public Image barraVida;
     
-    [Header("Invulnerabilidad")]
-public float tiempoInvulnerable = 1f;
-public float frecuenciaParpadeo = 0.1f;
+    [Header("Ataque")]
+    public float radioAtaque = 1f;
+    public int dañoAtaque = 10;
+    public Transform puntoAtaque; // Un GameObject vacío donde sale el ataque
+    public LayerMask capasEnemigos;
 
-private bool esInvulnerable = false;
-private SpriteRenderer spriteRenderer;
+    public AudioClip sonidoAtaque;
+
+    private bool puedeAtacar = true;
+
+    [Header("Invulnerabilidad")]
+    public float tiempoInvulnerable = 1f;
+    public float frecuenciaParpadeo = 0.1f;
+
+    private bool esInvulnerable = false;
+    private SpriteRenderer spriteRenderer;
 
     [Header("Movimiento")]
     public float velocidad = 5f;
@@ -61,6 +71,10 @@ private SpriteRenderer spriteRenderer;
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.X) && puedeAtacar)
+    {
+        Atacar();
+    }
         bool enSuelo = EstaEnSuelo();
         //cortar salto
         if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.UpArrow)) && rigidBody.velocity.y > 0)
@@ -218,4 +232,37 @@ private IEnumerator InvulnerabilidadTemporal()
         }
     }
 
-} 
+void Atacar()
+{
+    puedeAtacar = false;
+
+    animator.SetTrigger("Ataque");
+
+    AudioManager.Instance?.ReproducirSonido(sonidoAtaque);
+
+    Collider2D[] enemigos = Physics2D.OverlapCircleAll(puntoAtaque.position, radioAtaque, capasEnemigos);
+
+    foreach (Collider2D enemigo in enemigos)
+    {
+        IDamageable dañable = enemigo.GetComponent<IDamageable>();
+        if (dañable != null)
+        {
+            dañable.RecibirDaño(dañoAtaque);
+        }
+    }
+
+    Invoke(nameof(HabilitarAtaque), 0.5f); 
+}
+
+void HabilitarAtaque()
+{
+    puedeAtacar = true;
+}
+void OnDrawGizmosSelected()
+{
+    if (puntoAtaque == null) return;
+
+    Gizmos.color = Color.red;
+    Gizmos.DrawWireSphere(puntoAtaque.position, radioAtaque);
+}
+}
