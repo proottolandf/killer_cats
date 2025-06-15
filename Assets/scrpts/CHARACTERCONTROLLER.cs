@@ -8,9 +8,9 @@ public class CustomCharacterController : MonoBehaviour
     [Header("Vida")]
     public float vidaMaxima = 100f;
     private float vidaActual;
-    public bool Alive { get; private set; } = true; 
+    public bool Alive { get; private set; } = true;
     public Image barraVida;
-    
+
     [Header("Ataque")]
     public float radioAtaque = 1f;
     public int dañoAtaque = 10;
@@ -58,7 +58,7 @@ public class CustomCharacterController : MonoBehaviour
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-         vidaActual = vidaMaxima;
+        vidaActual = vidaMaxima;
         ActualizarBarraVida();
 
         rigidBody = GetComponent<Rigidbody2D>();
@@ -72,9 +72,9 @@ public class CustomCharacterController : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.X) && puedeAtacar)
-    {
-        Atacar();
-    }
+        {
+            Atacar();
+        }
         bool enSuelo = EstaEnSuelo();
         //cortar salto
         if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.UpArrow)) && rigidBody.velocity.y > 0)
@@ -82,13 +82,13 @@ public class CustomCharacterController : MonoBehaviour
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, rigidBody.velocity.y * multiplicadorCorteSalto);
         }
         ProcesarEntradaSalto(enSuelo);
-       
+
         ActualizarAnimacion();
     }
 
     private void FixedUpdate()
     {
-         ActualizarDireccionMovimiento();
+        ActualizarDireccionMovimiento();
         ProcesarMovimiento();
     }
 
@@ -157,6 +157,7 @@ public class CustomCharacterController : MonoBehaviour
             y = 0;
         }
 
+        
         ultimaPosicion = posicionActual;
     }
 
@@ -167,62 +168,64 @@ public class CustomCharacterController : MonoBehaviour
     }
 
     public void ActivarInvulnerabilidad()
-{
-    if (!esInvulnerable)
     {
-        StartCoroutine(InvulnerabilidadTemporal());
-    }
-}
-
-private IEnumerator InvulnerabilidadTemporal()
-{
-    esInvulnerable = true;
-
-    float tiempo = 0f;
-    while (tiempo < tiempoInvulnerable)
-    {
-        spriteRenderer.enabled = false;
-        yield return new WaitForSeconds(frecuenciaParpadeo);
-        spriteRenderer.enabled = true;
-        yield return new WaitForSeconds(frecuenciaParpadeo);
-        tiempo += frecuenciaParpadeo * 2;
+        if (!esInvulnerable)
+        {
+            StartCoroutine(InvulnerabilidadTemporal());
+        }
     }
 
-    esInvulnerable = false;
-}
+    private IEnumerator InvulnerabilidadTemporal()
+    {
+        esInvulnerable = true;
+
+        float tiempo = 0f;
+        while (tiempo < tiempoInvulnerable)
+        {
+            spriteRenderer.enabled = false;
+            yield return new WaitForSeconds(frecuenciaParpadeo);
+            spriteRenderer.enabled = true;
+            yield return new WaitForSeconds(frecuenciaParpadeo);
+            tiempo += frecuenciaParpadeo * 2;
+        }
+
+        esInvulnerable = false;
+    }
     public void RecibirDanio(float cantidad)
-{
-    if (esInvulnerable) return;
-
-    vidaActual -= cantidad;
-    vidaActual = Mathf.Clamp(vidaActual, 0, vidaMaxima);
-    Alive = vidaActual > 0;
-    ActualizarBarraVida();
-
-    animator.SetTrigger("Daño");
-     AudioManager.Instance.ReproducirSonido(Daño);
-
-    // Activar i-frames
-    ActivarInvulnerabilidad();
-
-    if (vidaActual <= 0)
     {
-        Morir();
+        if (esInvulnerable) return;
+
+        vidaActual -= cantidad;
+        vidaActual = Mathf.Clamp(vidaActual, 0, vidaMaxima);
+        Alive = vidaActual > 0;
+        ActualizarBarraVida();
+
+        animator.SetTrigger("Daño");
+        AudioManager.Instance.ReproducirSonido(Daño);
+
+        // Activar i-frames
+        ActivarInvulnerabilidad();
+
+        if (vidaActual <= 0)
+        {
+            Morir();
+        }
     }
-}
+
     void Morir()
     {
         Debug.Log("El personaje ha muerto.");
-         Alive = false;
-        
+        Alive = false;
+
         animator.SetTrigger("Muerte");
         StartCoroutine(EsperarYDesactivar());
     }
+
     private IEnumerator EsperarYDesactivar()
-{
-    yield return new WaitForSeconds(2f); 
-    gameObject.SetActive(false); 
-}
+    {
+        yield return new WaitForSeconds(2f);
+        gameObject.SetActive(false);
+    }
 
     void ActualizarBarraVida()
     {
@@ -232,37 +235,46 @@ private IEnumerator InvulnerabilidadTemporal()
         }
     }
 
-void Atacar()
-{
-    puedeAtacar = false;
-
-    animator.SetTrigger("Ataque");
-
-    AudioManager.Instance?.ReproducirSonido(sonidoAtaque);
-
-    Collider2D[] enemigos = Physics2D.OverlapCircleAll(puntoAtaque.position, radioAtaque, capasEnemigos);
-
-    foreach (Collider2D enemigo in enemigos)
+    public void IncrementarVida(float cantidad)
     {
-        IDamageable dañable = enemigo.GetComponent<IDamageable>();
-        if (dañable != null)
-        {
-            dañable.RecibirDaño(dañoAtaque);
-        }
+        if (!Alive) return;
+
+        vidaActual += cantidad;
+        vidaActual = Mathf.Clamp(vidaActual, 0, vidaMaxima);
+        ActualizarBarraVida();
     }
 
-    Invoke(nameof(HabilitarAtaque), 0.5f); 
-}
+    void Atacar()
+    {
+        puedeAtacar = false;
 
-void HabilitarAtaque()
-{
-    puedeAtacar = true;
-}
-void OnDrawGizmosSelected()
-{
-    if (puntoAtaque == null) return;
+        animator.SetTrigger("Ataque");
 
-    Gizmos.color = Color.red;
-    Gizmos.DrawWireSphere(puntoAtaque.position, radioAtaque);
-}
+        AudioManager.Instance?.ReproducirSonido(sonidoAtaque);
+
+        Collider2D[] enemigos = Physics2D.OverlapCircleAll(puntoAtaque.position, radioAtaque, capasEnemigos);
+
+        foreach (Collider2D enemigo in enemigos)
+        {
+            IDamageable dañable = enemigo.GetComponent<IDamageable>();
+            if (dañable != null)
+            {
+                dañable.RecibirDaño(dañoAtaque);
+            }
+        }
+
+        Invoke(nameof(HabilitarAtaque), 0.5f);
+    }
+
+    void HabilitarAtaque()
+    {
+        puedeAtacar = true;
+    }
+    void OnDrawGizmosSelected()
+    {
+        if (puntoAtaque == null) return;
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(puntoAtaque.position, radioAtaque);
+    }
 }

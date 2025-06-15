@@ -3444,7 +3444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116fa78e1c3f709409872ca92b6446a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 50
+  vida: 1
 --- !u!114 &1400208356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3458,7 +3458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanciaMovimiento: 5
-  velocidad: 2
+  velocidad: 0
 --- !u!61 &1400208357
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3516,7 +3516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116fa78e1c3f709409872ca92b6446a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 50
+  vida: -1
 --- !u!95 &1400208359
 Animator:
   serializedVersion: 5
@@ -3605,6 +3605,25 @@ MonoBehaviour:
   "da\xF1o": 10
   "tiempoEntreDa\xF1os": 1
   fuerzaEmpuje: 5
+--- !u!1 &1550226845 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2703199206039470991, guid: 42e715fac3dcfca43aa8676ae217e84e, type: 3}
+  m_PrefabInstance: {fileID: 4709768785600802983}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1550226850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550226845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d88d3d8387d0e2409aa1f91bd32e28f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valor: 10
+  gameManager: {fileID: 0}
 --- !u!1 &1662035419
 GameObject:
   m_ObjectHideFlags: 0
@@ -4455,7 +4474,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2703199206039470991, guid: 42e715fac3dcfca43aa8676ae217e84e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1550226850}
   m_SourcePrefab: {fileID: 100100000, guid: 42e715fac3dcfca43aa8676ae217e84e, type: 3}
 --- !u!1001 &7848971729349949076
 PrefabInstance:
@@ -4519,6 +4541,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3434366080634944335, guid: 8bf50e1e5175912458a90320873ec8a0, type: 3}
       propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434366080634944335, guid: 8bf50e1e5175912458a90320873ec8a0, type: 3}
+      propertyPath: m_GravityScale
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3434366080634944335, guid: 8bf50e1e5175912458a90320873ec8a0, type: 3}
@@ -4615,7 +4641,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8305274021944914076, guid: 8bf50e1e5175912458a90320873ec8a0, type: 3}
       propertyPath: fuerzaSalto
-      value: 10
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8305274021944914076, guid: 8bf50e1e5175912458a90320873ec8a0, type: 3}
       propertyPath: puntoAtaque
@@ -4625,6 +4651,10 @@ PrefabInstance:
       propertyPath: sonidoSalto
       value: 
       objectReference: {fileID: 8300000, guid: a8de265bb4b291648bcc17cc8c9ce138, type: 3}
+    - target: {fileID: 8305274021944914076, guid: 8bf50e1e5175912458a90320873ec8a0, type: 3}
+      propertyPath: sonidoAtaque
+      value: 
+      objectReference: {fileID: 8300000, guid: 85ad878132de3a64fa7e8d15f01630c3, type: 3}
     - target: {fileID: 8305274021944914076, guid: 8bf50e1e5175912458a90320873ec8a0, type: 3}
       propertyPath: saltosMaximos
       value: 1
