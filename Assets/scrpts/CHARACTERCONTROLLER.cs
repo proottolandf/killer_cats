@@ -42,6 +42,15 @@ public class CustomCharacterController : MonoBehaviour
     public AudioClip sonidoSalto;
     public AudioClip Daño;
 
+    [Header("Mana")]
+    public float manaMaxima = 100f;
+    private float manaActual;
+    public Image barraMana;
+    public float costoManaMagia = 20f;
+
+    [Header("Ataque especial")]
+    public GameObject prefabMagia;
+    public Transform puntoDisparoMagia;
     // Componentes
     private Animator animator;
     private Rigidbody2D rigidBody;
@@ -67,6 +76,9 @@ public class CustomCharacterController : MonoBehaviour
 
         saltosRestantes = saltosMaximos;
         ultimaPosicion = transform.position;
+
+        manaActual = manaMaxima;
+        ActualizarBarraMana();
     }
 
     private void Update()
@@ -84,6 +96,11 @@ public class CustomCharacterController : MonoBehaviour
         ProcesarEntradaSalto(enSuelo);
 
         ActualizarAnimacion();
+        
+        if (Input.GetKeyDown(KeyCode.C) && manaActual >= costoManaMagia)
+        {
+            LanzarMagia();
+        }
     }
 
     private void FixedUpdate()
@@ -264,6 +281,28 @@ public class CustomCharacterController : MonoBehaviour
         }
 
         Invoke(nameof(HabilitarAtaque), 0.5f);
+    }
+
+    void LanzarMagia()
+    {
+        manaActual -= costoManaMagia;
+        manaActual = Mathf.Clamp(manaActual, 0, manaMaxima);
+        ActualizarBarraMana();
+
+        Instantiate(prefabMagia, puntoDisparoMagia.position, transform.rotation);
+    }
+    void ActualizarBarraMana()
+    {
+        if (barraMana != null)
+        {
+            barraMana.fillAmount = manaActual / manaMaxima;
+        }
+    }
+    public void IncrementarMana(float cantidad)
+    {
+        manaActual += cantidad;
+        manaActual = Mathf.Clamp(manaActual, 0, manaMaxima);
+        ActualizarBarraMana();
     }
 
     void HabilitarAtaque()
