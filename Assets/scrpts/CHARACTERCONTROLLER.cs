@@ -97,7 +97,7 @@ public class CustomCharacterController : MonoBehaviour
 
         ActualizarAnimacion();
         
-        if (Input.GetKeyDown(KeyCode.C) && manaActual >= costoManaMagia)
+        if (Input.GetKeyDown(KeyCode.Z) && manaActual >= costoManaMagia)
         {
             LanzarMagia();
         }
@@ -289,8 +289,15 @@ public class CustomCharacterController : MonoBehaviour
         manaActual = Mathf.Clamp(manaActual, 0, manaMaxima);
         ActualizarBarraMana();
 
-        Instantiate(prefabMagia, puntoDisparoMagia.position, transform.rotation);
+        // Instanciar el proyectil y establecer la dirección según la orientación
+        GameObject proyectil = Instantiate(prefabMagia, puntoDisparoMagia.position, transform.rotation);
+        DañoAEnemigos scriptProyectil = proyectil.GetComponent<DañoAEnemigos>();
+        if (scriptProyectil != null)
+        {
+            scriptProyectil.SetDireccion(mirandoDerecha ? Vector2.right : Vector2.left);
+        }
     }
+
     void ActualizarBarraMana()
     {
         if (barraMana != null)

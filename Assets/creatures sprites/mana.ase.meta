@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9b2309427a2545a44a33b90c16d4a8cf
+guid: 5083b8e6951ef5844a5c3ebe1e8c01d9
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: knife
+  - name: mana
     originalName: 
-    pivot: {x: 0.53846157, y: -3}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 13
-      height: 2
-    spriteID: 2bda44371e68e544e85e64db94114928
+      width: 1
+      height: 1
+    spriteID: dbd182e359c480f4c985ec24304d0fda
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,25 +144,25 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1090807207
-    name: knife
+    guid: 1040126899
+    name: mana
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: knife
+    - name: mana
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 1
-        y: 6
-        width: 13
-        height: 2
-      spriteId: 2bda44371e68e544e85e64db94114928
+        x: 0
+        y: 0
+        width: 1
+        height: 1
+      spriteId: dbd182e359c480f4c985ec24304d0fda
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 16, y: 16}
+  canvasSize: {x: 1, y: 1}

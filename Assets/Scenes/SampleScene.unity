@@ -498,7 +498,7 @@ GameObject:
   m_Component:
   - component: {fileID: 110275062}
   m_Layer: 0
-  m_Name: puntoAtaque
+  m_Name: puntoAtaque(x)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -760,6 +760,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315519318}
   m_CullTransparentMesh: 1
+--- !u!1 &515581823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 515581826}
+  - component: {fileID: 515581825}
+  - component: {fileID: 515581824}
+  m_Layer: 5
+  m_Name: mana
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &515581824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515581823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.051886797, g: 1, b: 0.9287877, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 7208768663074167657, guid: 5083b8e6951ef5844a5c3ebe1e8c01d9, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &515581825
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515581823}
+  m_CullTransparentMesh: 1
+--- !u!224 &515581826
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515581823}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 0.5, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1266941038}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 286, y: -88}
+  m_SizeDelta: {x: 98, y: 13}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,7 +922,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.219827, y: -0.10437989, z: -10}
+  m_LocalPosition: {x: -8.650001, y: -0.11000013, z: -10}
   m_LocalScale: {x: 0.54167, y: 0.58215785, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1421,6 +1496,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1003106058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1003106059}
+  m_Layer: 0
+  m_Name: puntoMagia(z)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1003106059
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003106058}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.077, y: -0.005, z: 0.006623258}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.25}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1668285087}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1064151134
 GameObject:
   m_ObjectHideFlags: 0
@@ -1777,7 +1883,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 170
+  m_SurfaceArc: 175
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -3297,6 +3403,7 @@ RectTransform:
   m_Children:
   - {fileID: 828574395}
   - {fileID: 315519319}
+  - {fileID: 515581826}
   m_Father: {fileID: 1662035420}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3409,6 +3516,7 @@ GameObject:
   - component: {fileID: 1400208356}
   - component: {fileID: 1400208355}
   - component: {fileID: 1400208361}
+  - component: {fileID: 1400208362}
   m_Layer: 7
   m_Name: "rat da\xF1able"
   m_TagString: Untagged
@@ -3592,6 +3700,33 @@ MonoBehaviour:
   "da\xF1o": 0
   "tiempoEntreDa\xF1os": 1
   fuerzaEmpuje: 5
+--- !u!50 &1400208362
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400208353}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 6
 --- !u!1 &1550226845 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2703199206039470991, guid: 42e715fac3dcfca43aa8676ae217e84e, type: 3}
@@ -4686,7 +4821,7 @@ PrefabInstance:
     - target: {fileID: 7012054554662121357, guid: 8bf50e1e5175912458a90320873ec8a0, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -24323615, guid: c783e054b2de88940b26ff3eba1b1c84, type: 3}
+      objectReference: {fileID: 1268025822, guid: 30832c3b14b711040b674636ce600d30, type: 3}
     - target: {fileID: 7012054554662121357, guid: 8bf50e1e5175912458a90320873ec8a0, type: 3}
       propertyPath: m_SortingLayer
       value: -1
@@ -4704,6 +4839,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 1245f5e5f62b65b42aa008cb72843acd, type: 3}
     - target: {fileID: 8305274021944914076, guid: 8bf50e1e5175912458a90320873ec8a0, type: 3}
+      propertyPath: barraMana
+      value: 
+      objectReference: {fileID: 515581824}
+    - target: {fileID: 8305274021944914076, guid: 8bf50e1e5175912458a90320873ec8a0, type: 3}
       propertyPath: barraVida
       value: 
       objectReference: {fileID: 1129252599}
@@ -4715,6 +4854,10 @@ PrefabInstance:
       propertyPath: fuerzaSalto
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 8305274021944914076, guid: 8bf50e1e5175912458a90320873ec8a0, type: 3}
+      propertyPath: prefabMagia
+      value: 
+      objectReference: {fileID: 8132804202099671548, guid: 54b83462412ce134c9a9cfbd1105dff0, type: 3}
     - target: {fileID: 8305274021944914076, guid: 8bf50e1e5175912458a90320873ec8a0, type: 3}
       propertyPath: puntoAtaque
       value: 
@@ -4736,6 +4879,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8305274021944914076, guid: 8bf50e1e5175912458a90320873ec8a0, type: 3}
+      propertyPath: puntoDisparoMagia
+      value: 
+      objectReference: {fileID: 110275062}
+    - target: {fileID: 8305274021944914076, guid: 8bf50e1e5175912458a90320873ec8a0, type: 3}
       propertyPath: capasEnemigos.m_Bits
       value: 128
       objectReference: {fileID: 0}
@@ -4745,6 +4892,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6949175391531449535, guid: 8bf50e1e5175912458a90320873ec8a0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 110275062}
+    - targetCorrespondingSourceObject: {fileID: 6949175391531449535, guid: 8bf50e1e5175912458a90320873ec8a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1003106059}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1276427566540460059, guid: 8bf50e1e5175912458a90320873ec8a0, type: 3}
       insertIndex: -1
