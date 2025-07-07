@@ -6,6 +6,7 @@ public class DañoAEnemigos : MonoBehaviour
     public int daño = 10;
     public bool destruirAlImpactar = true;
     public LayerMask Enemy;
+    public LayerMask capasColision; // Selecciona activador y floor en el Inspector
     public float velocidad = 10f;
     private Vector2 direccion = Vector2.right;
 
@@ -38,17 +39,26 @@ public class DañoAEnemigos : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Solo interactúa si el objeto está en el LayerMask Enemy
-        if ((Enemy.value & (1 << other.gameObject.layer)) == 0)
-            return;
-
-        Debug.Log($"Proyectil colisionó con {other.gameObject.name}");
-
-        IDamageable dañable = other.GetComponent<IDamageable>();
-        if (dañable != null)
+        // Colisión con enemigos
+        if ((Enemy.value & (1 << other.gameObject.layer)) != 0)
         {
-            dañable.RecibirDaño(daño);
+            Debug.Log($"Proyectil colisionó con {other.gameObject.name}");
+            IDamageable dañable = other.GetComponent<IDamageable>();
+            if (dañable != null)
+            {
+                dañable.RecibirDaño(daño);
+                if (destruirAlImpactar)
+                {
+                    Destroy(gameObject);
+                }
+            }
+            return;
+        }
 
+        // Colisión con capas activador o floor
+        if ((capasColision.value & (1 << other.gameObject.layer)) != 0)
+        {
+            Debug.Log($"Proyectil colisionó con capa especial: {other.gameObject.name}");
             if (destruirAlImpactar)
             {
                 Destroy(gameObject);

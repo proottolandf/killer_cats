@@ -21,6 +21,12 @@ public class CustomCharacterController : MonoBehaviour
 
     private bool puedeAtacar = true;
 
+    [Header("Ataque aéreo")]
+    public float ReduceMaza = 0.5f; // Reducir masa a la mitad durante el ataque aéreo
+    public float costoManaAtaqueAereo = 10f;
+    public AudioClip sonidoAtaqueAereo;
+    public Transform puntoAtaqueAereo; // punto de ataque aéreo
+
     [Header("Invulnerabilidad")]
     public float tiempoInvulnerable = 1f;
     public float frecuenciaParpadeo = 0.1f;
@@ -32,10 +38,10 @@ public class CustomCharacterController : MonoBehaviour
     public float velocidad = 5f;
     public float fuerzaSalto = 10f;
     public int saltosMaximos = 2;
-    [SerializeField] private float distanciaDeteccionSuelo = 0.2f;
+    public float distanciaDeteccionSuelo = 0.2f; // Barra que detecta el suelo
     public LayerMask capaSuelo;
 
-    [Header("Salto Avanzado")]
+    [Header("Salto")]
     [SerializeField] private float multiplicadorCorteSalto = 0.5f;
 
     [Header("Audio")]
@@ -51,6 +57,19 @@ public class CustomCharacterController : MonoBehaviour
     [Header("Ataque especial")]
     public GameObject prefabMagia;
     public Transform puntoDisparoMagia;
+
+    [Header("Corrupción y Reparación")]
+    public float radioReparacion = 3f;
+    public LayerMask capaCorrupcion;
+    public float manaCostoReparar = 20f;
+    public float manaCostoCorromper = 20f;
+    public bool habilidadCorromperDesbloqueada = false;
+    public int usosCorromperRestantes = 3;
+    public GameObject haloVisual;
+    public AudioSource audioSource;
+    public AudioClip sonidoReparar;
+    public AudioClip sonidoCorromper;
+
     // Componentes
     private Animator animator;
     private Rigidbody2D rigidBody;
@@ -63,6 +82,9 @@ public class CustomCharacterController : MonoBehaviour
     private Vector2 direccionMovimiento;
     private float x;
     private float y;
+
+    // Guardar la masa original
+    private float masaOriginal;
 
     private void Start()
     {
@@ -79,27 +101,56 @@ public class CustomCharacterController : MonoBehaviour
 
         manaActual = manaMaxima;
         ActualizarBarraMana();
+
+        // Guardar la masa original
+        masaOriginal = rigidBody.mass;
     }
 
     private void Update()
     {
+        bool sobreSuelo = EstaSobreSuelo();
         if (Input.GetKeyDown(KeyCode.X) && puedeAtacar)
         {
-            Atacar();
+            if (sobreSuelo)
+            {
+                Atacar(); // Ataque normal
+            }
+            else if (manaActual >= costoManaAtaqueAereo)
+            {
+                AtaqueAereo(); // Ataque aéreo
+            }
         }
-        bool enSuelo = EstaEnSuelo();
         //cortar salto
         if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.UpArrow)) && rigidBody.velocity.y > 0)
         {
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, rigidBody.velocity.y * multiplicadorCorteSalto);
         }
-        ProcesarEntradaSalto(enSuelo);
+        ProcesarEntradaSalto(sobreSuelo);
 
         ActualizarAnimacion();
         
         if (Input.GetKeyDown(KeyCode.Z) && manaActual >= costoManaMagia)
         {
             LanzarMagia();
+        }
+
+        // Corrupción y reparación
+        IluminarCercanos();
+        AjustarHalo();
+        if (Input.GetKeyDown(KeyCode.R) && PuedeReparar() && manaActual >= manaCostoReparar)
+        {
+            RepararCorrupcion();
+            manaActual -= manaCostoReparar;
+            manaActual = Mathf.Clamp(manaActual, 0, manaMaxima);
+            ActualizarBarraMana();
+            reproducirAudioDeHabilidad();
+        }
+        if (habilidadCorromperDesbloqueada && Input.GetKeyDown(KeyCode.T) && usosCorromperRestantes > 0 && manaActual >= manaCostoCorromper)
+        {
+            CorromperEntorno();
+            manaActual -= manaCostoCorromper;
+            manaActual = Mathf.Clamp(manaActual, 0, manaMaxima);
+            ActualizarBarraMana();
         }
     }
 
@@ -109,22 +160,24 @@ public class CustomCharacterController : MonoBehaviour
         ProcesarMovimiento();
     }
 
-    bool EstaEnSuelo()
+    bool EstaSobreSuelo()
     {
-        RaycastHit2D raycastHit = Physics2D.BoxCast(
-            boxCollider.bounds.center,
-            boxCollider.bounds.size,
-            0f,
-            Vector2.down,
-            distanciaDeteccionSuelo,
-            capaSuelo);
-
-        return raycastHit.collider != null;
+        // Usar la base del BoxCollider2D como origen del raycast
+        Vector2 origen = new Vector2(boxCollider.bounds.center.x, boxCollider.bounds.min.y);
+        RaycastHit2D hit = Physics2D.Raycast(origen, Vector2.down, distanciaDeteccionSuelo, capaSuelo);
+        if (hit.collider != null)
+        {
+            if (hit.normal.y > 0.7f) // Normal hacia arriba
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
-    void ProcesarEntradaSalto(bool enSuelo)
+    void ProcesarEntradaSalto(bool sobreSuelo)
     {
-        if (enSuelo)
+        if (sobreSuelo)
         {
             saltosRestantes = saltosMaximos;
         }
@@ -283,6 +336,36 @@ public class CustomCharacterController : MonoBehaviour
         Invoke(nameof(HabilitarAtaque), 0.5f);
     }
 
+    void AtaqueAereo()
+    {
+        puedeAtacar = false;
+        manaActual -= costoManaAtaqueAereo;
+        manaActual = Mathf.Clamp(manaActual, 0, manaMaxima);
+        ActualizarBarraMana();
+        animator.SetTrigger("AtaqueAereo"); // Debes tener este trigger en tu Animator
+        AudioManager.Instance?.ReproducirSonido(sonidoAtaqueAereo);
+        // Disminuir masa temporalmente para mantener al jugador en el aire
+        rigidBody.mass = masaOriginal * ReduceMaza;
+        StartCoroutine(RestaurarMasaTrasAereo());
+        // Usar el punto de ataque aéreo
+        Collider2D[] enemigos = Physics2D.OverlapCircleAll(puntoAtaqueAereo.position, radioAtaque, capasEnemigos);
+        foreach (Collider2D enemigo in enemigos)
+        {
+            IDamageable dañable = enemigo.GetComponent<IDamageable>();
+            if (dañable != null)
+            {
+                dañable.RecibirDaño(dañoAtaque); // Puedes cambiar el daño si quieres
+            }
+        }
+        Invoke(nameof(HabilitarAtaque), 0.5f);
+    }
+
+    private IEnumerator RestaurarMasaTrasAereo()
+    {
+        yield return new WaitForSeconds(0.10f);
+        rigidBody.mass = masaOriginal;
+    }
+
     void LanzarMagia()
     {
         manaActual -= costoManaMagia;
@@ -316,11 +399,95 @@ public class CustomCharacterController : MonoBehaviour
     {
         puedeAtacar = true;
     }
+
+    void AjustarHalo()
+    {
+        if (haloVisual != null)
+            haloVisual.transform.localScale = new Vector3(radioReparacion * 2, radioReparacion * 2, 1);
+    }
+
+    void IluminarCercanos()
+    {
+        Collider2D[] objetos = Physics2D.OverlapCircleAll(transform.position, radioReparacion, capaCorrupcion);
+        if (haloVisual != null)
+            haloVisual.SetActive(objetos.Length > 0);
+
+        foreach (Collider2D col in objetos)
+        {
+            Corrupto c = col.GetComponent<Corrupto>();
+            if (c != null && !c.estaIluminado)
+                c.MostrarIluminacion();
+        }
+    }
+
+    bool PuedeReparar()
+    {
+        Collider2D[] objetos = Physics2D.OverlapCircleAll(transform.position, radioReparacion, capaCorrupcion);
+        return objetos.Length > 0;
+    }
+
+    void RepararCorrupcion()
+    {
+        Collider2D[] objetos = Physics2D.OverlapCircleAll(transform.position, radioReparacion, capaCorrupcion);
+        foreach (Collider2D col in objetos)
+        {
+            Corrupto c = col.GetComponent<Corrupto>();
+            if (c != null) c.Reparar();
+        }
+    }
+
+    void CorromperEntorno()
+    {
+        Collider2D[] objetos = Physics2D.OverlapCircleAll(transform.position, radioReparacion);
+        bool algoCorrompible = false;
+
+        foreach (Collider2D col in objetos)
+        {
+            Corruptible c = col.GetComponent<Corruptible>();
+            if (c != null && !c.estaCorrupto)
+            {
+                c.Corromper();
+                algoCorrompible = true;
+            }
+        }
+
+        if (algoCorrompible)
+        {
+            usosCorromperRestantes--;
+            reproducirAudioCorromper();
+        }
+    }
+
+    void reproducirAudioDeHabilidad()
+    {
+        if (audioSource != null && sonidoReparar != null)
+            audioSource.PlayOneShot(sonidoReparar);
+    }
+
+    void reproducirAudioCorromper()
+    {
+        if (audioSource != null && sonidoCorromper != null)
+            audioSource.PlayOneShot(sonidoCorromper);
+    }
+
+    public void DesbloquearCorromper()
+    {
+        habilidadCorromperDesbloqueada = true;
+    }
+
     void OnDrawGizmosSelected()
     {
-        if (puntoAtaque == null) return;
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(puntoAtaque.position, radioAtaque);
+        if (puntoAtaque != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(puntoAtaque.position, radioAtaque);
+        }
+        // Dibuja la distancia de detección de suelo desde la base del collider
+        if (boxCollider != null)
+        {
+            Vector3 origen = new Vector3(boxCollider.bounds.center.x, boxCollider.bounds.min.y, transform.position.z);
+            Gizmos.color = Color.green;
+            Gizmos.DrawLine(origen, origen + Vector3.down * distanciaDeteccionSuelo);
+        }
     }
 }
