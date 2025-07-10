@@ -26,7 +26,7 @@ public class DañoPorContacto : MonoBehaviour
 
                     // Empuje
                     Vector2 direccionEmpuje = (collision.transform.position - transform.position).normalized;
-                    rb.velocity = new Vector2(0, 0); // Reiniciar velocidad antes de empujar
+                    rb.linearVelocity = new Vector2(0, 0); // Reiniciar velocidad antes de empujar
                     rb.AddForce(direccionEmpuje * fuerzaEmpuje, ForceMode2D.Impulse);
 
                     // Activar animación de daño (si existe)

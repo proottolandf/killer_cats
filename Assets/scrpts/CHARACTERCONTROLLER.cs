@@ -121,9 +121,9 @@ public class CustomCharacterController : MonoBehaviour
             }
         }
         //cortar salto
-        if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.UpArrow)) && rigidBody.velocity.y > 0)
+        if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.UpArrow)) && rigidBody.linearVelocity.y > 0)
         {
-            rigidBody.velocity = new Vector2(rigidBody.velocity.x, rigidBody.velocity.y * multiplicadorCorteSalto);
+            rigidBody.linearVelocity = new Vector2(rigidBody.linearVelocity.x, rigidBody.linearVelocity.y * multiplicadorCorteSalto);
         }
         ProcesarEntradaSalto(sobreSuelo);
 
@@ -185,7 +185,7 @@ public class CustomCharacterController : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)) && saltosRestantes > 0)
         {
             saltosRestantes--;
-            rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0f);
+            rigidBody.linearVelocity = new Vector2(rigidBody.linearVelocity.x, 0f);
             rigidBody.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
             AudioManager.Instance.ReproducirSonido(sonidoSalto);
         }
@@ -194,7 +194,7 @@ public class CustomCharacterController : MonoBehaviour
     void ProcesarMovimiento()
     {
         float inputMovimiento = Input.GetAxis("Horizontal");
-        rigidBody.velocity = new Vector2(inputMovimiento * velocidad, rigidBody.velocity.y);
+        rigidBody.linearVelocity = new Vector2(inputMovimiento * velocidad, rigidBody.linearVelocity.y);
 
         GestionarOrientacion(inputMovimiento);
     }
@@ -212,7 +212,7 @@ public class CustomCharacterController : MonoBehaviour
     {
         Vector2 posicionActual = transform.position;
         Vector2 direccion = posicionActual - ultimaPosicion;
-        float magnitud = direccion.magnitude;
+        float magnitud = direccion.magnitude;        
 
         float minMovimiento = 0.001f;
         if (magnitud > minMovimiento)
@@ -472,7 +472,7 @@ public class CustomCharacterController : MonoBehaviour
 
     public void DesbloquearCorromper()
     {
-        habilidadCorromperDesbloqueada = true;
+        habilidadCorromperDesbloqueada = true;                
     }
 
     void OnDrawGizmosSelected()
