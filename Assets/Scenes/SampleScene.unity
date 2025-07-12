@@ -829,7 +829,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7208768663074167657, guid: 5083b8e6951ef5844a5c3ebe1e8c01d9, type: 3}
+  m_Sprite: {fileID: -6609455512381199693, guid: dbb3fb65d7df15f4796c0d7320cb33a2, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -953,7 +953,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.426062, y: -0.09899998, z: -10}
+  m_LocalPosition: {x: -3.528873, y: -0.09905982, z: -10}
   m_LocalScale: {x: 0.54167, y: 0.58215785, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4817,6 +4817,7 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 1894551292}
   m_Damping: 0.5
   m_MaxWindowSize: -1
+  m_Padding: 0
 --- !u!1001 &186231251644539026
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4b598ae7502605b4b9cb13a8d0be34f4
+guid: dbb3fb65d7df15f4796c0d7320cb33a2
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,7 +121,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: magia1
+  - name: Sprite-0001
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -130,9 +130,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 8
-      height: 8
-    spriteID: cbcf63a9fef2c7c4db659bd38a1ee3a8
+      width: 1
+      height: 1
+    spriteID: 51ba9b59741a3294faba8cf885cfc64b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,25 +144,25 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 222882450
-    name: magia1
+    guid: -572921211
+    name: Sprite-0001
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: magia1
+    - name: Sprite-0001
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
-        width: 8
-        height: 8
-      spriteId: cbcf63a9fef2c7c4db659bd38a1ee3a8
+        width: 1
+        height: 1
+      spriteId: 51ba9b59741a3294faba8cf885cfc64b
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 8, y: 8}
+  canvasSize: {x: 1, y: 1}
