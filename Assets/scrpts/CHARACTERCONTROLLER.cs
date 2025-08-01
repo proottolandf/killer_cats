@@ -5,50 +5,78 @@ using UnityEngine.UI;
 
 public class CustomCharacterController : MonoBehaviour
 {
+    #region estadisticas
     [Header("Vida")]
     public float vidaMaxima = 100f;
     private float vidaActual;
+    private float vidaAnterior;
     public bool Alive { get; private set; } = true;
-    public Image barraVida; float vidaAnterior;    
+    public Image barraVida;
 
     [Header("Mana")]
     public float manaMaxima = 100f;
     private float manaActual;
     public Image barraMana;
+    public float costoManaMagia = 20f;
+    #endregion
+
+    #region mejor_gameplay
+    [Header("Invulnerabilidad")]
+    public float tiempoInvulnerable = 1f;
+    public float frecuenciaParpadeo = 0.1f;
+    private bool esInvulnerable;
+    private SpriteRenderer spriteRenderer;
+    #endregion
+
+    #region movimiento
+    [Header("Salto")]
+    [SerializeField] private float multiplicadorCorteSalto = 0.5f;
+    public AudioClip sonidoSalto;
+    private bool saltoDobleActivo = false;
+
+    [Header("Movimiento")]
+    public float velocidad = 5f;
+    public float fuerzaSalto = 10f;
+    public int saltosMaximos = 2;
+    public float distanciaDeteccionSuelo = 0.2f; // Barra que detecta el suelo
+    public LayerMask capaSuelo;
+
+    [Header("agachar/mirando")]
+    private bool agachado = false;
+    private Vector2 tamañoOriginalCollider;
+    private Vector2 offsetOriginalCollider;
+    public float factorAgachado = 0.5f;
+    public float factorVelocidadAgachado = 0.5f; // 50% de la velocidad normal al agacharse
+
+    #endregion
+
+    #region abilidades
+
+    [Header("Audio")]
+    public AudioClip Daño;
+    public AudioClip sonidoAtaqueAereo;
+    public AudioClip sonidoAtaque;
+    public AudioSource audioSource;
+    public AudioClip sonidoReparar;
+    public AudioClip sonidoCorromper;
 
     [Header("Ataque")]
     public float radioAtaque = 1f;
     public int dañoAtaque = 10;
-    public Transform puntoAtaque;
+    public Transform puntoAtaque; // Un GameObject vacío donde sale el ataque
     public LayerMask capasEnemigos;
 
-    [Header("Ataque aéreo")]
-    public float costoManaAtaqueAereo = 10f;
-    public AudioClip sonidoAtaqueAereo;
-    public Transform puntoAtaqueAereo;
 
-    [Header("Magia")]
+    private bool puedeAtacar = true;
+
+    [Header("Ataque aéreo")]
+    public float ReduceMaza = 0.5f; // Reducir masa a la mitad durante el ataque aéreo
+    public float costoManaAtaqueAereo = 10f;
+    public Transform puntoAtaqueAereo; // punto de ataque aéreo
+
+    [Header("Ataque especial")]
     public GameObject prefabMagia;
     public Transform puntoDisparoMagia;
-    public float costoManaMagia = 15f;
-
-    [Header("Movimiento y salto")]
-    public float velocidad = 5f;
-    public float fuerzaSalto = 10f;
-    public int saltosMaximos = 2;
-    private int saltosRestantes;
-    public LayerMask capaSuelo;
-    public float distanciaDeteccionSuelo = 0.2f;
-    private Rigidbody2D rigidBody;
-    private BoxCollider2D boxCollider;
-    private bool mirandoDerecha = true; 
-    bool saltoDobleActivo;      
-    bool agachadoActivo;       
-
-    [Header("Invulnerabilidad")]
-    public float tiempoInvulnerable = 1f;
-    public float frecuenciaParpadeo = 0.1f;
-    private bool esInvulnerable = false;
 
     [Header("Corrupción y Reparación")]
     public float radioReparacion = 3f;
@@ -58,31 +86,48 @@ public class CustomCharacterController : MonoBehaviour
     public bool habilidadCorromperDesbloqueada = false;
     public int usosCorromperRestantes = 3;
     public GameObject haloVisual;
-    public AudioSource audioSource;
-    public AudioClip sonidoReparar;
-    public AudioClip sonidoCorromper;
+    
 
-    [Header("Audio")]
-    public AudioClip sonidoAtaque;
+    // Guardar la masa original
+    private float masaOriginal;
+    #endregion
 
-    [Header("Salto Avanzado")]
-    [SerializeField] private float multiplicadorCorteSalto = 0.5f;
-
+    #region componentes
     private Animator animator;
-    private SpriteRenderer spriteRenderer;
+    private Rigidbody2D rigidBody;
+    private BoxCollider2D boxCollider;
+    private int saltosRestantes;
+    #endregion
 
-    private bool puedeAtacar = true;
+    #region Animación y orientación
+    private bool mirandoDerecha = true;
+    private Vector2 ultimaPosicion;
+    private Vector2 direccionMovimiento;
+    private float x;
+    private float y;
+    #endregion
 
     private void Awake()
     {
+        // Inicializar componentes
         rigidBody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        // Guardar tamaño y offset original 
+        tamañoOriginalCollider = boxCollider.size;
+        offsetOriginalCollider = boxCollider.offset;
+    }
 
+    private void Start()
+    {
+        // Inicializar valores
         vidaActual = vidaMaxima;
         manaActual = manaMaxima;
         saltosRestantes = saltosMaximos;
+        ultimaPosicion = transform.position;
+
+        masaOriginal = rigidBody.mass;
 
         ActualizarBarraVida();
         ActualizarBarraMana();
@@ -108,7 +153,7 @@ public class CustomCharacterController : MonoBehaviour
         }
 
         // CORTAR SALTO
-        if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.UpArrow)) && rigidBody.velocity.y > 0)
+        if (Input.GetKeyUp(KeyCode.Space) && rigidBody.velocity.y > 0)
         {
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, rigidBody.velocity.y * multiplicadorCorteSalto);
         }
@@ -162,11 +207,25 @@ public class CustomCharacterController : MonoBehaviour
         }
 
         // ESTADO AGACHADO
-        agachadoActivo = Input.GetKey(KeyCode.DownArrow); // o la tecla que uses
-        animator.SetBool("Agachado", agachadoActivo);
-
-        ActualizarAnimacion();
+        bool agachadoAhora = Input.GetKey(KeyCode.DownArrow);
+        animator.SetBool("Agachado", agachadoAhora);
+        if (agachadoAhora && !agachado)
+        {
+            // Reducir la altura del collider a la mitad y ajustar el offset
+            boxCollider.size = new Vector2(tamañoOriginalCollider.x, tamañoOriginalCollider.y * factorAgachado);
+            boxCollider.offset = new Vector2(offsetOriginalCollider.x, offsetOriginalCollider.y - (tamañoOriginalCollider.y * (1 - factorAgachado) / 2f));
+        }
+        else if (!agachadoAhora && agachado)
+        {
+            // Restaurar tamaño y offset original
+            boxCollider.size = tamañoOriginalCollider;
+            boxCollider.offset = offsetOriginalCollider;
+        }
+        agachado = agachadoAhora;
+   
+    ActualizarAnimacion();
     }
+
     private void FixedUpdate()
     {
         ProcesarMovimiento();
@@ -188,6 +247,7 @@ public class CustomCharacterController : MonoBehaviour
 
     private void ProcesarEntradaSalto(bool sobreSuelo)
     {
+        animator.SetFloat("y", rigidBody.velocity.y);
         if (sobreSuelo)
         {
             saltosRestantes = saltosMaximos;
@@ -207,7 +267,10 @@ public class CustomCharacterController : MonoBehaviour
         // Usamos el valor del input directamente como float
         animator.SetFloat("x", inputMovimiento);
 
-        rigidBody.velocity = new Vector2(inputMovimiento * velocidad, rigidBody.velocity.y);
+        // Aplica reducción de velocidad si está agachado
+        float velocidadActual = agachado ? velocidad * factorVelocidadAgachado : velocidad;
+
+        rigidBody.velocity = new Vector2(inputMovimiento * velocidadActual, rigidBody.velocity.y);
 
         GestionarOrientacion(inputMovimiento);
     }
@@ -281,7 +344,13 @@ public class CustomCharacterController : MonoBehaviour
         manaActual -= costoManaMagia;
         ActualizarBarraMana();
 
-        Instantiate(prefabMagia, puntoDisparoMagia.position, Quaternion.identity);
+        GameObject magia = Instantiate(prefabMagia, puntoDisparoMagia.position, Quaternion.identity);
+
+        // Calcular dirección (puede ser hacia donde mira el personaje)
+        Vector2 direccionDisparo = transform.localScale.x > 0 ? Vector2.right : Vector2.left;
+
+        // Asignar la dirección al proyectil
+        magia.GetComponent<DañoAEnemigos>()?.SetDireccion(direccionDisparo);
     }
 
     #endregion
@@ -307,13 +376,17 @@ public class CustomCharacterController : MonoBehaviour
         }
     }
 
-    private void Morir()
+    private IEnumerator Morir()
     {
         Alive = false;
         animator.SetBool("Alive", false);
         rigidBody.velocity = Vector2.zero;
+
         // Aquí puedes añadir más lógica de muerte (desactivar controles, mostrar pantalla, etc)
         Debug.Log("El personaje ha muerto");
+
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 
     private IEnumerator ActivarInvulnerabilidad()

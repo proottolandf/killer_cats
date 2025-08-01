@@ -46,15 +46,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9af80044d476143937f68218aa1c6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempo: 1
+  tiempo: 3
   "da\xF1o": 10
   destruirAlImpactar: 1
   Enemy:
     serializedVersion: 2
     m_Bits: 128
+  capasColision:
+    serializedVersion: 2
+    m_Bits: 8
   velocidad: 10
   "tama\xF1o": {x: 5, y: 5}
-  spritePersonalizado: {fileID: 0}
+  spritePersonalizado: {fileID: -1955850022840302224, guid: 4b598ae7502605b4b9cb13a8d0be34f4, type: 3}
 --- !u!212 &7547091014269656784
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -96,7 +99,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -141941355317607, guid: 4b598ae7502605b4b9cb13a8d0be34f4, type: 3}
+  m_Sprite: {fileID: -1955850022840302224, guid: 4b598ae7502605b4b9cb13a8d0be34f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
