@@ -32,7 +32,7 @@ public class CustomCharacterController : MonoBehaviour
     [Header("Salto")]
     [SerializeField] private float multiplicadorCorteSalto = 0.5f;
     public AudioClip sonidoSalto;
-    private bool saltoDobleActivo = false;
+    private bool saltoDobleActivo;
 
     [Header("Movimiento")]
     public float velocidad = 5f;
@@ -250,13 +250,16 @@ public class CustomCharacterController : MonoBehaviour
         animator.SetFloat("y", rigidBody.velocity.y);
         if (sobreSuelo)
         {
-            saltosRestantes = saltosMaximos;
+            saltosRestantes = saltosMaximos; // Por ejemplo, 2 para doble salto
         }
 
-        if ((Input.GetKeyDown(KeyCode.Space)) && saltosRestantes > 0)
+        if (Input.GetKeyDown(KeyCode.Space) && saltosRestantes > 0)
         {
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, fuerzaSalto);
             saltosRestantes--;
+
+            if (saltosRestantes == 1)
+                animator.SetTrigger("SegundoSalto");
         }
     }
 
