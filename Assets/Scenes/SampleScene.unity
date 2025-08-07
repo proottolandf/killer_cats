@@ -953,7 +953,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.528873, y: -0.09905982, z: -10}
+  m_LocalPosition: {x: -6.975314, y: -0.10371995, z: -10}
   m_LocalScale: {x: 0.54167, y: 0.58215785, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5247,7 +5247,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 85ad878132de3a64fa7e8d15f01630c3, type: 3}
     - target: {fileID: 8305274021944914076, guid: 8bf50e1e5175912458a90320873ec8a0, type: 3}
       propertyPath: saltosMaximos
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8305274021944914076, guid: 8bf50e1e5175912458a90320873ec8a0, type: 3}
       propertyPath: capaSuelo.m_Bits

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class CustomCharacterController : MonoBehaviour
 {
@@ -47,6 +48,14 @@ public class CustomCharacterController : MonoBehaviour
     private Vector2 offsetOriginalCollider;
     public float factorAgachado = 0.5f;
     public float factorVelocidadAgachado = 0.5f; // 50% de la velocidad normal al agacharse
+
+    [Header("correr")]
+    private float tiempoUltimoTapDerecha = -1f;
+    private float tiempoUltimoTapIzquierda = -1f;
+    private float tiempoMaximoEntreTaps = 0.3f;
+    private bool estaCorriendo = false;
+    [SerializeField] float velocidadCaminar = 5f;
+    [SerializeField] float velocidadCorrer = 10f;
 
     #endregion
 
@@ -97,6 +106,7 @@ public class CustomCharacterController : MonoBehaviour
     private Rigidbody2D rigidBody;
     private BoxCollider2D boxCollider;
     private int saltosRestantes;
+    private PlayerInputActions inputActions;
     #endregion
 
     #region Animación y orientación
@@ -109,6 +119,8 @@ public class CustomCharacterController : MonoBehaviour
 
     private void Awake()
     {
+        //iniciar controles
+        inputActions = new PlayerInputActions();
         // Inicializar componentes
         rigidBody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
@@ -137,8 +149,16 @@ public class CustomCharacterController : MonoBehaviour
     {
         bool sobreSuelo = EstaSobreSuelo();
 
-        // ATAQUE NORMAL Y AÉREO
-        if (Input.GetKeyDown(KeyCode.X) && puedeAtacar)
+        // Movimiento
+        Vector2 direccion = inputActions.Gameplay.Move.ReadValue<Vector2>();
+        float direccionX = direccion.x;
+
+        // Detección de doble tap para correr
+        LeerMovimiento();
+        ActualizarAnimacion();
+
+        // ATAQUE NORMAL Y AÉREO (Input System)
+        if (inputActions.Gameplay.Attack.triggered && puedeAtacar)
         {
             if (sobreSuelo)
             {
@@ -152,8 +172,18 @@ public class CustomCharacterController : MonoBehaviour
             }
         }
 
+        // Saltar
+        if (inputActions.Gameplay.Jump.triggered && saltosRestantes > 0)
+        {
+            rigidBody.velocity = new Vector2(rigidBody.velocity.x, fuerzaSalto);
+            saltosRestantes--;
+
+            if (saltosRestantes == 1)
+                animator.SetTrigger("SegundoSalto");
+        }
+
         // CORTAR SALTO
-        if (Input.GetKeyUp(KeyCode.Space) && rigidBody.velocity.y > 0)
+        if (inputActions.Gameplay.Jump.triggered && rigidBody.velocity.y > 0)
         {
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, rigidBody.velocity.y * multiplicadorCorteSalto);
         }
@@ -167,7 +197,7 @@ public class CustomCharacterController : MonoBehaviour
         }
 
         // LANZAR MAGIA
-        if (Input.GetKeyDown(KeyCode.C))
+        if (inputActions.Gameplay.Magic.triggered)
         {
             LanzarMagia();
             animator.SetTrigger("Magia");
@@ -177,7 +207,7 @@ public class CustomCharacterController : MonoBehaviour
         IluminarCercanos();
         AjustarHalo();
 
-        if (Input.GetKeyDown(KeyCode.R) && PuedeReparar() && manaActual >= manaCostoReparar)
+        if (inputActions.Gameplay.Reparar.triggered && PuedeReparar() && manaActual >= manaCostoReparar)
         {
             RepararCorrupcion();
             animator.SetTrigger("reparar");
@@ -188,7 +218,8 @@ public class CustomCharacterController : MonoBehaviour
             reproducirAudioDeHabilidad();
         }
 
-        if (habilidadCorromperDesbloqueada && Input.GetKeyDown(KeyCode.T) && usosCorromperRestantes > 0 && manaActual >= manaCostoCorromper)
+        if (habilidadCorromperDesbloqueada && inputActions.Gameplay.Corromper.triggered && usosCorromperRestantes > 0 && manaActual >= manaCostoCorromper)
+   
         {
             CorromperEntorno();
             animator.SetTrigger("corromper");
@@ -207,7 +238,7 @@ public class CustomCharacterController : MonoBehaviour
         }
 
         // ESTADO AGACHADO
-        bool agachadoAhora = Input.GetKey(KeyCode.DownArrow);
+        bool agachadoAhora = inputActions.Gameplay.Agachado.ReadValue<float>() > 0;
         animator.SetBool("Agachado", agachadoAhora);
         if (agachadoAhora && !agachado)
         {
@@ -288,6 +319,48 @@ public class CustomCharacterController : MonoBehaviour
             transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         }
     }
+
+    void LeerMovimiento()
+    {
+        float direccion = inputActions.Gameplay.Move.ReadValue<float>();
+        DetectarDobleTap(direccion);
+        AplicarMovimiento(direccion);
+    } // lee el movimiento
+
+    void DetectarDobleTap(float direccionX)
+    {
+        if (direccionX > 0)
+        {
+            if (Time.time - tiempoUltimoTapDerecha < tiempoMaximoEntreTaps)
+            {
+                estaCorriendo = true;
+            }
+            tiempoUltimoTapDerecha = Time.time;
+        }
+        else if (direccionX < 0)
+        {
+            if (Time.time - tiempoUltimoTapIzquierda < tiempoMaximoEntreTaps)
+            {
+                estaCorriendo = true;
+            }
+            tiempoUltimoTapIzquierda = Time.time;
+        }
+
+
+        if (direccionX == 0)
+        {
+            estaCorriendo = false;
+        }
+    }//Lógica de doble tap
+
+
+
+void AplicarMovimiento(float direccionX)
+    {
+        float velocidadActual = estaCorriendo ? velocidadCorrer : velocidadCaminar;
+        rigidBody.velocity = new Vector2(direccionX * velocidadActual, rigidBody.velocity.y);
+        animator.SetBool("Corriendo", estaCorriendo);
+    }//Aplicar movimiento y animación
 
     #endregion
 
@@ -545,4 +618,14 @@ public class CustomCharacterController : MonoBehaviour
     }
 
     #endregion
+
+    private void OnEnable()
+    {
+        inputActions.Enable();
+    }
+
+    private void OnDisable()
+    {
+        inputActions.Disable();
+    }
 }

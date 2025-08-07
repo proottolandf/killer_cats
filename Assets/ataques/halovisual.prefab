@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7924419241928173143}
   - component: {fileID: 830928097868583478}
   m_Layer: 0
-  m_Name: HaloVisual
+  m_Name: halovisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
