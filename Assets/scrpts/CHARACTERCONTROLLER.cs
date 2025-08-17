@@ -34,13 +34,14 @@ public class CustomCharacterController : MonoBehaviour
     [SerializeField] private float multiplicadorCorteSalto = 0.5f;
     public AudioClip sonidoSalto;
     private bool saltoDobleActivo;
+    public float distanciaDeteccionSuelo = 0.2f; // Barra que detecta el suelo
+    public LayerMask capaSuelo;
 
     [Header("Movimiento")]
     public float velocidad = 5f;
     public float fuerzaSalto = 10f;
     public int saltosMaximos = 2;
-    public float distanciaDeteccionSuelo = 0.2f; // Barra que detecta el suelo
-    public LayerMask capaSuelo;
+   
 
     [Header("agachar/mirando")]
     private bool agachado = false;
@@ -173,7 +174,7 @@ public class CustomCharacterController : MonoBehaviour
         }
 
         // Saltar
-        if (inputActions.Gameplay.Jump.triggered && saltosRestantes > 0)
+        if (inputActions.Gameplay.Jump.WasPressedThisFrame() && saltosRestantes > 0)
         {
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, fuerzaSalto);
             saltosRestantes--;
@@ -183,7 +184,7 @@ public class CustomCharacterController : MonoBehaviour
         }
 
         // CORTAR SALTO
-        if (inputActions.Gameplay.Jump.triggered && rigidBody.velocity.y > 0)
+        if (inputActions.Gameplay.Jump.WasReleasedThisFrame() && rigidBody.velocity.y > 0)
         {
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, rigidBody.velocity.y * multiplicadorCorteSalto);
         }
