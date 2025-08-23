@@ -323,9 +323,10 @@ public class CustomCharacterController : MonoBehaviour
 
     void LeerMovimiento()
     {
-        float direccion = inputActions.Gameplay.Move.ReadValue<float>();
-        DetectarDobleTap(direccion);
-        AplicarMovimiento(direccion);
+        Vector2 direccion = inputActions.Gameplay.Move.ReadValue<Vector2>();
+        float direccionX = direccion.x;
+        DetectarDobleTap(direccionX);
+        AplicarMovimiento(direccionX);
     } // lee el movimiento
 
     void DetectarDobleTap(float direccionX)
