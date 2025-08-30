@@ -512,6 +512,15 @@ void AplicarMovimiento(float direccionX)
 
     #endregion
 
+    #region mana
+    public void IncrementarMana(float cantidad)
+    {
+        manaActual += cantidad;
+        manaActual = Mathf.Clamp(manaActual, 0, manaMaxima);
+        ActualizarBarraMana();
+    }
+    #endregion
+
     #region Corrupción y reparación
 
     private void IluminarCercanos()
