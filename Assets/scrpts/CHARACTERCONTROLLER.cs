@@ -27,6 +27,7 @@ public class CustomCharacterController : MonoBehaviour
     public float frecuenciaParpadeo = 0.1f;
     private bool esInvulnerable;
     private SpriteRenderer spriteRenderer;
+    //public float ReduceMaza = 0.5f; // Reducir masa a la mitad durante el ataque aéreo
     #endregion
 
     #region movimiento
@@ -79,10 +80,6 @@ public class CustomCharacterController : MonoBehaviour
 
     private bool puedeAtacar = true;
 
-    [Header("Ataque aéreo")]
-    public float ReduceMaza = 0.5f; // Reducir masa a la mitad durante el ataque aéreo
-    public float costoManaAtaqueAereo = 10f;
-    public Transform puntoAtaqueAereo; // punto de ataque aéreo
 
     [Header("Ataque especial")]
     public GameObject prefabMagia;
@@ -149,7 +146,7 @@ public class CustomCharacterController : MonoBehaviour
     private void Update()
     {
         bool sobreSuelo = EstaSobreSuelo();
-
+        #region movimiento
         // Movimiento
         Vector2 direccion = inputActions.Gameplay.Move.ReadValue<Vector2>();
         float direccionX = direccion.x;
@@ -161,16 +158,9 @@ public class CustomCharacterController : MonoBehaviour
         // ATAQUE NORMAL Y AÉREO (Input System)
         if (inputActions.Gameplay.Attack.triggered && puedeAtacar)
         {
-            if (sobreSuelo)
-            {
                 Atacar();
                 animator.SetTrigger("Ataque");
-            }
-            else if (manaActual >= costoManaAtaqueAereo)
-            {
-                AtaqueAereo();
-                animator.SetTrigger("AtaqueAereo");
-            }
+
         }
 
         // Saltar
@@ -196,7 +186,9 @@ public class CustomCharacterController : MonoBehaviour
         {
             animator.SetTrigger("SegundoSalto");
         }
+#endregion
 
+        #region poderes
         // LANZAR MAGIA
         if (inputActions.Gameplay.Magic.triggered)
         {
@@ -231,14 +223,15 @@ public class CustomCharacterController : MonoBehaviour
             reproducirAudioCorromper();
         }
 
-        // DETECCIÓN DE DAÑO
+        #endregion
+        #region deteccion de daño
         if (vidaActual < vidaAnterior)
         {
             animator.SetTrigger("Daño");
             vidaAnterior = vidaActual;
         }
-
-        // ESTADO AGACHADO
+        #endregion
+        #region Agachado
         bool agachadoAhora = inputActions.Gameplay.Agachado.ReadValue<float>() > 0;
         animator.SetBool("Agachado", agachadoAhora);
         if (agachadoAhora && !agachado)
@@ -254,8 +247,8 @@ public class CustomCharacterController : MonoBehaviour
             boxCollider.offset = offsetOriginalCollider;
         }
         agachado = agachadoAhora;
-   
-    ActualizarAnimacion();
+        #endregion
+        ActualizarAnimacion();
     }
 
     private void FixedUpdate()
@@ -375,29 +368,6 @@ void AplicarMovimiento(float direccionX)
         AudioManager.Instance?.ReproducirSonido(sonidoAtaque);
 
         Collider2D[] enemigos = Physics2D.OverlapCircleAll(puntoAtaque.position, radioAtaque, capasEnemigos);
-        foreach (var enemigo in enemigos)
-        {
-            var dañable = enemigo.GetComponent<IDamageable>();
-            if (dañable != null)
-            {
-                dañable.RecibirDaño(dañoAtaque);
-            }
-        }
-
-        Invoke(nameof(HabilitarAtaque), 0.5f);
-    }
-
-    private void AtaqueAereo()
-    {
-        puedeAtacar = false;
-        manaActual -= costoManaAtaqueAereo;
-        manaActual = Mathf.Clamp(manaActual, 0, manaMaxima);
-        ActualizarBarraMana();
-
-        animator.SetTrigger("AtaqueAereo");
-        AudioManager.Instance?.ReproducirSonido(sonidoAtaqueAereo);
-
-        Collider2D[] enemigos = Physics2D.OverlapCircleAll(puntoAtaqueAereo.position, radioAtaque, capasEnemigos);
         foreach (var enemigo in enemigos)
         {
             var dañable = enemigo.GetComponent<IDamageable>();
@@ -639,4 +609,4 @@ void AplicarMovimiento(float direccionX)
     {
         inputActions.Disable();
     }
-}
+}   

@@ -12,6 +12,11 @@ public class GameManager : MonoBehaviour
     public GameObject botonPausa;
     public GameObject PausaScreen;
 
+    public CustomCharacterController characterController;
+    public GameObject deathScreen;
+
+    private bool deathScreenShown = false;
+
     public void SumarPuntos(int puntosASumar)
     {
         puntosTotales += puntosASumar;
@@ -36,5 +41,22 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 1;
             }
         }
+
+        if (!deathScreenShown && characterController != null && !characterController.Alive)
+        {
+            deathScreenShown = true;
+            StartCoroutine(ShowDeathScreen());
+        }
+    }
+
+    IEnumerator ShowDeathScreen()
+    {
+        if (deathScreen != null)
+            deathScreen.SetActive(true);
+
+        yield return new WaitForSeconds(4f);
+
+        if (deathScreen != null)
+            deathScreen.SetActive(false);
     }
 }
