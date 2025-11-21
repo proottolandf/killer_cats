@@ -5422,6 +5422,7 @@ MonoBehaviour:
   IsPaused: 0
   botonPausa: {fileID: 46091440}
   PausaScreen: {fileID: 2123594165}
+  opcionesMenu: {fileID: 0}
   characterController: {fileID: 0}
   deathScreen: {fileID: 0}
 --- !u!4 &1698145269
@@ -6987,7 +6988,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 85ad878132de3a64fa7e8d15f01630c3, type: 3}
     - target: {fileID: 8305274021944914076, guid: 8bf50e1e5175912458a90320873ec8a0, type: 3}
       propertyPath: saltosMaximos
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8305274021944914076, guid: 8bf50e1e5175912458a90320873ec8a0, type: 3}
       propertyPath: capaSuelo.m_Bits

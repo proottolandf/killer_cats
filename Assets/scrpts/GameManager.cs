@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject botonPausa;
     public GameObject PausaScreen;
+    public OpcionesMenuController opcionesMenu;
+
 
     public CustomCharacterController characterController;
     public GameObject deathScreen;
@@ -59,4 +61,10 @@ public class GameManager : MonoBehaviour
         if (deathScreen != null)
             deathScreen.SetActive(false);
     }
+    public void AbrirOpciones()
+    {
+        PausaScreen.SetActive(false);
+        opcionesMenu.opcionesScreen.SetActive(true);
+    }
+
 }

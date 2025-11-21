@@ -27,6 +27,7 @@ public class CustomCharacterController : MonoBehaviour
     public float frecuenciaParpadeo = 0.1f;
     private bool esInvulnerable;
     private SpriteRenderer spriteRenderer;
+    // private float ultimaDireccionTap = 0f;  // eliminado: duplicado, se usa como int en la sección de doble tap
     //public float ReduceMaza = 0.5f; // Reducir masa a la mitad durante el ataque aéreo
     #endregion
 
@@ -52,12 +53,10 @@ public class CustomCharacterController : MonoBehaviour
     public float factorVelocidadAgachado = 0.5f; // 50% de la velocidad normal al agacharse
 
     [Header("correr")]
-    private float tiempoUltimoTapDerecha = -1f;
-    private float tiempoUltimoTapIzquierda = -1f;
-    private float tiempoMaximoEntreTaps = 0.3f;
-    private bool estaCorriendo = false;
-    [SerializeField] float velocidadCaminar = 5f;
-    [SerializeField] float velocidadCorrer = 10f;
+    // Variables de doble tap definidas en la sección de movimiento más abajo
+    // (Se usan las bindings digitales del Input System para detectar doble tap)
+    //[SerializeField] float velocidadCaminar = 5f;
+    //[SerializeField] float velocidadCorrer = 10f;
 
     #endregion
 
@@ -108,7 +107,7 @@ public class CustomCharacterController : MonoBehaviour
     #endregion
 
     #region Animación y orientación
-    private bool mirandoDerecha = true;
+ //   private bool mirandoDerecha = true;
     private Vector2 ultimaPosicion;
     private Vector2 direccionMovimiento;
     private float x;
@@ -278,40 +277,54 @@ public class CustomCharacterController : MonoBehaviour
             saltosRestantes = saltosMaximos; // Por ejemplo, 2 para doble salto
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && saltosRestantes > 0)
-        {
-            rigidBody.velocity = new Vector2(rigidBody.velocity.x, fuerzaSalto);
-            saltosRestantes--;
-
-            if (saltosRestantes == 1)
-                animator.SetTrigger("SegundoSalto");
-        }
+        // El salto ya se gestiona en Update con inputActions.Gameplay.Jump
     }
 
-    void ProcesarMovimiento()
+    // Métodos de movimiento/desplazamiento unificados definidos más abajo (usar solo Input System)
+
+    // --- DOBLE TAP RUNNING ---
+    private float tiempoMaximoEntreTaps = 0.25f;
+    private float tiempoUltimoTap = 0f;
+    private int ultimaDireccionTap = 0;
+    private bool estaCorriendo = false;
+    private int ultimaDireccion = 0;
+
+    void DetectarDobleTap(float direccionX)
     {
-        float inputMovimiento = Input.GetAxis("Horizontal");
+        int dir = direccionX > 0 ? 1 : direccionX < 0 ? -1 : 0;
 
-        // Usamos el valor del input directamente como float
-        animator.SetFloat("x", inputMovimiento);
+        // Detecta TAP: pasar de 0 a una dirección
+        if (dir != 0 && ultimaDireccion == 0)
+        {
+            if (dir == ultimaDireccionTap && Time.time - tiempoUltimoTap <= tiempoMaximoEntreTaps)
+            {
+                estaCorriendo = true;
+            }
+            else
+            {
+                estaCorriendo = false;
+            }
 
+            tiempoUltimoTap = Time.time;
+            ultimaDireccionTap = dir;
+        }
+
+        // Cancelar correr si deja de moverse
+        if (dir == 0)
+            estaCorriendo = false;
+
+        ultimaDireccion = dir;
+    }
+
+    void AplicarMovimiento(float direccionX)
+    {
+        float velocidadActual = estaCorriendo ? velocidad * 2f : velocidad;
         // Aplica reducción de velocidad si está agachado
-        float velocidadActual = agachado ? velocidad * factorVelocidadAgachado : velocidad;
+        velocidadActual = agachado ? velocidadActual * factorVelocidadAgachado : velocidadActual;
 
-        rigidBody.velocity = new Vector2(inputMovimiento * velocidadActual, rigidBody.velocity.y);
-
-        GestionarOrientacion(inputMovimiento);
-    }
-
-    void GestionarOrientacion(float inputMovimiento)
-    {
-        float direccionActual = Mathf.Sign(transform.localScale.x);
-        float nuevaDireccion = Mathf.Sign(inputMovimiento);
-
-        if (inputMovimiento != 0 && direccionActual != nuevaDireccion)
-        {
-            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
-        }
+        rigidBody.velocity = new Vector2(direccionX * velocidadActual, rigidBody.velocity.y);
+        animator.SetFloat("x", direccionX);
+        GestionarOrientacion(direccionX);
     }
 
     void LeerMovimiento()
@@ -320,42 +333,32 @@ public class CustomCharacterController : MonoBehaviour
         float direccionX = direccion.x;
         DetectarDobleTap(direccionX);
         AplicarMovimiento(direccionX);
-    } // lee el movimiento
+    }
 
-    void DetectarDobleTap(float direccionX)
+    void ProcesarMovimiento()
     {
-        if (direccionX > 0)
-        {
-            if (Time.time - tiempoUltimoTapDerecha < tiempoMaximoEntreTaps)
-            {
-                estaCorriendo = true;
-            }
-            tiempoUltimoTapDerecha = Time.time;
-        }
-        else if (direccionX < 0)
-        {
-            if (Time.time - tiempoUltimoTapIzquierda < tiempoMaximoEntreTaps)
-            {
-                estaCorriendo = true;
-            }
-            tiempoUltimoTapIzquierda = Time.time;
-        }
+        Vector2 direccion = inputActions.Gameplay.Move.ReadValue<Vector2>();
+        float inputMovimiento = direccion.x;
 
+        float velocidadActual = estaCorriendo ? velocidad * 2f : velocidad;
+        velocidadActual = agachado ? velocidadActual * factorVelocidadAgachado : velocidadActual;
 
-        if (direccionX == 0)
-        {
-            estaCorriendo = false;
-        }
-    }//Lógica de doble tap
+        animator.SetFloat("x", inputMovimiento);
+        rigidBody.velocity = new Vector2(inputMovimiento * velocidadActual, rigidBody.velocity.y);
+        GestionarOrientacion(inputMovimiento);
+    }
 
-
-
-void AplicarMovimiento(float direccionX)
+    void GestionarOrientacion(float inputMovimiento)
     {
-        float velocidadActual = estaCorriendo ? velocidadCorrer : velocidadCaminar;
-        rigidBody.velocity = new Vector2(direccionX * velocidadActual, rigidBody.velocity.y);
-        animator.SetBool("Corriendo", estaCorriendo);
-    }//Aplicar movimiento y animación
+        if (inputMovimiento == 0) return;
+        float direccionActual = Mathf.Sign(transform.localScale.x);
+        float nuevaDireccion = Mathf.Sign(inputMovimiento);
+
+        if (direccionActual != nuevaDireccion)
+        {
+            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+        }
+    }
 
     #endregion
 
@@ -571,7 +574,7 @@ void AplicarMovimiento(float direccionX)
 
     private void ActualizarAnimacion()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
+        float horizontal = inputActions.Gameplay.Move.ReadValue<Vector2>().x;
         animator.SetFloat("x", horizontal);
         animator.SetBool("Alive", Alive);
 
